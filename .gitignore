@@ -1,0 +1,10 @@
+__pycache__
+.venv
+.vscode
+config
+dist
+build*
+*.zip
+
+# macOS File System
+.DS_Store
