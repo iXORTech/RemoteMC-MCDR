@@ -14,13 +14,13 @@ def on_load(plugin_server_interface: PluginServerInterface, prev):
     global server
     server = plugin_server_interface
     server.logger.info("==========================================================")
-    server.logger.info("RemoteMC-MCDR Plugin Loaded")
+    server.logger.info(i18n('plugin_loaded'))
     VERSION: str = server.get_self_metadata().version.__str__()
-    server.logger.info(f"Version: {VERSION}")
+    server.logger.info(i18n('version', VERSION))
     if "dev" in VERSION or "alpha" in VERSION or "beta" in VERSION:
-        server.logger.info("THIS IS IN EXPERIMENTAL STAGE, DO NOT USE IN PRODUCTION ENVIRONMENT!")
+        server.logger.info(i18n('logger.warning.experimental'))
     elif "rc" in VERSION:
-        server.logger.info("THIS IS A RELEASE CANDIDATE, DO NOT USE IN PRODUCTION ENVIRONMENT!")
+        server.logger.info(i18n('logger.warning.release_candidate'))
     server.logger.info("==========================================================")
     
 def on_server_startup(plugin_server_interface: PluginServerInterface):
