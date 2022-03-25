@@ -6,5 +6,8 @@ dist
 build*
 *.zip
 
+# MCDR Packed Plugin
+*.mcdr
+
 # macOS File System
 .DS_Store
