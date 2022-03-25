@@ -1,0 +1,21 @@
+{
+    "id": "remotemc_mcdr",
+    "version": "0.0.1-dev",
+    "name": "RemoteMC-MCDR",
+    "description": {
+        "en_us": "MCDReforged Plugin of RemoteMC Series",
+        "zh_cn": "RemoteMC 系列 MCDReforged 插件"
+    },
+    "author": [
+        "iXOR Technology",
+		"Cubik65536",
+		"KevinZonda"
+	],
+    "link": "https://github.com/iXORTech/RemoteMC-MCDR",
+    "dependencies": {
+        "mcdreforged": ">=2.0.1"
+    },
+    "resources": [
+		"lang"
+	]
+}
