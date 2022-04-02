@@ -1,5 +1,6 @@
 remotemc_mcdr.plugin_loaded: RemoteMC-MCDR Plugin Loaded
 remotemc_mcdr.version: 'Version: {0}'
+remotemc_mcdr.json_parsing_error: §cCustom JSON Parsing Error
 remotemc_mcdr.logger.warning.experimental: §cTHIS IS IN EXPERIMENTAL STAGE, DO NOT USE IN PRODUCTION ENVIRONMENT!
 remotemc_mcdr.logger.warning.release_candidate: §cTHIS IS A RELEASE CANDIDATE, DO NOT USE IN PRODUCTION ENVIRONMENT!
 remotemc_mcdr.loading_flask: §9Loading Flask framework...

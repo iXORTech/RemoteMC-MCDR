@@ -2,7 +2,9 @@ from mcdreforged.api.all import *
 
 from remotemc_mcdr.flask import *
 from remotemc_mcdr.util.i18n_util import *
+from remotemc_mcdr.util.config_util import *
 
+config: Configure
 server: PluginServerInterface = None
 
 # Load Intergrated Flask Web Server
@@ -11,8 +13,9 @@ def load_flask():
     run_flask("127.0.0.1", 65362)
 
 def on_load(plugin_server_interface: PluginServerInterface, prev):
-    global server
+    global server, config
     server = plugin_server_interface
+    config = load_config(server, server.get_plugin_command_source())
     server.logger.info("==========================================================")
     server.logger.info(i18n('plugin_loaded'))
     VERSION: str = server.get_self_metadata().version.__str__()

@@ -1,5 +1,6 @@
 remotemc_mcdr.plugin_loaded: RemoteMC-MCDR 插件已加载完成
 remotemc_mcdr.version: 软件版本：{0}
+remotemc_mcdr.json_parsing_error: §c自定义 JSON 解析错误
 remotemc_mcdr.experimental: §c该程序仍然处于实验阶段，请不要应用于生产环境！
 remotemc_mcdr.release_candidate: §c该程序仍然处于发布候选阶段，请不要应用于生产环境！
 remotemc_mcdr.loading_flask: §9正在加载 Flask 框架...
