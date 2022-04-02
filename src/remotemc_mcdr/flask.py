@@ -14,12 +14,15 @@ flask_app.config['JSON_AS_ASCII'] = False
 flask_app.config['JSONIFY_MIMETYPE'] = "application/json; charset=utf-8"
 flask_app.config['DEBUG'] = True
 
+auth_key: str = None
+
 @flask_app.route('/ping', methods=["GET"])
 def ping():
     return HtmlResponseUtil.get_200_response("PONG!")
 
 @new_thread('Flask@RemoteMC-MCDR')
-def run_flask(host: str, port: int):
+def run_flask(host: str, port: int, auth_key: str):
     # Start the Flask Server
     server.logger.info(i18n('starting_flask', host, port))
+    globals()['auth_key'] = auth_key
     serve(flask_app, host=host, port=port)

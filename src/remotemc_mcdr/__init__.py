@@ -10,7 +10,7 @@ server: PluginServerInterface = None
 # Load Intergrated Flask Web Server
 def load_flask():
     server.logger.info(i18n('loading_flask'))
-    run_flask("127.0.0.1", 65362)
+    run_flask(config.remote_core['host'], int(config.remote_core['port']), config.remote_core['auth_key'])
 
 def on_load(plugin_server_interface: PluginServerInterface, prev):
     global server, config
