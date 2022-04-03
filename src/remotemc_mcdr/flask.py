@@ -1,3 +1,4 @@
+from email import message
 from flask import Flask, request
 from waitress import serve
 
@@ -45,6 +46,25 @@ def execute_command():
     else:
         server.execute_command(command)
         return HtmlResponseUtil.get_200_response(i18n('enable_rcon'))
+    
+@flask_app.route('/api/v1/mcserver/say', methods=["POST"])
+def say():
+    if not request.is_json:
+        return HtmlResponseUtil.get_400_response()
+    
+    content = request.get_json()
+    if not is_key_in_json[content, 'auth_key', 'source', 'sender', 'message']:
+        return HtmlResponseUtil.get_400_response()
+    
+    if not auth_key == content['auth_key']:
+        return HtmlResponseUtil.get_401_response()
+    
+    source = content['source']
+    sender = content['sender']
+    message = content['message']
+    
+    server.say(f"[{source}] {sender}: {message}")
+    return HtmlResponseUtil.get_200_response()
 
 @new_thread('Flask@RemoteMC-MCDR')
 def run_flask(host: str, port: int, auth_key: str):
