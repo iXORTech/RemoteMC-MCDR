@@ -81,6 +81,7 @@ def broadcast():
     message = content['message']
     
     server.say(f"[{i18n('broadcast')}] {message}")
+    return HtmlResponseUtil.get_200_response()
 
 @new_thread('Flask@RemoteMC-MCDR')
 def run_flask(host: str, port: int, auth_key: str):
