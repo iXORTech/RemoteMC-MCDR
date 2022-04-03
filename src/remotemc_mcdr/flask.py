@@ -66,6 +66,22 @@ def say():
     server.say(f"[{source}] {sender}: {message}")
     return HtmlResponseUtil.get_200_response()
 
+@flask_app.route('/api/v1/mcserver/broadcast', methods=["POST"])
+def broadcast():
+    if not request.is_json:
+        return HtmlResponseUtil.get_400_response()
+    
+    content = request.get_json()
+    if not is_key_in_json[content, 'auth_key', 'message']:
+        return HtmlResponseUtil.get_400_response()
+    
+    if not auth_key == content['auth_key']:
+        return HtmlResponseUtil.get_401_response()
+    
+    message = content['message']
+    
+    server.say(f"[{i18n('broadcast')}] {message}")
+
 @new_thread('Flask@RemoteMC-MCDR')
 def run_flask(host: str, port: int, auth_key: str):
     # Start the Flask Server
