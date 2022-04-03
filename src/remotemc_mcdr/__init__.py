@@ -10,7 +10,7 @@ server: PluginServerInterface = None
 # Load Intergrated Flask Web Server
 def load_flask():
     server.logger.info(i18n('loading_flask'))
-    run_flask(config.remotemc_mcdr_flask['host'], int(config.remotemc_mcdr_flask['port']), config.remotemc_mcdr_flask['auth_key'])
+    run_flask(config.remotemc_mcdr_flask['host'], int(config.remotemc_mcdr_flask['port']), config.remotemc_mcdr['auth_key'])
 
 def on_load(plugin_server_interface: PluginServerInterface, prev):
     global server, config

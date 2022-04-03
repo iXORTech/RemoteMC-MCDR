@@ -12,10 +12,19 @@ class Configure(Serializable):
 
     # Default values
     
+    remotemc_mcdr: Dict[str, str] = {
+        "auth_key": "you_should_change_this",
+    }
+    
     remotemc_mcdr_flask: Dict[str, str] = {
         # Flask Server Config
         'host': "127.0.0.1",
         'port': "65362",
-        'auth_key': "you_should_change_this_key_to_your_own_key",
+    }
+    
+    remotemc_core: Dict[str, str] = {
+        'host': "127.0.0.1",
+        'port': "65360",
+        'ssl': "false",
     }
     
