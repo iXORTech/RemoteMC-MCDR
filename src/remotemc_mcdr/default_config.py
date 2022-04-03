@@ -12,7 +12,7 @@ class Configure(Serializable):
 
     # Default values
     
-    remotemc_mcdr: Dict[str, str] = {
+    remotemc: Dict[str, str] = {
         "auth_key": "you_should_change_this",
     }
     
