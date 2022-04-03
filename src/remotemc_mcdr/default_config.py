@@ -16,6 +16,11 @@ class Configure(Serializable):
         "auth_key": "you_should_change_this",
     }
     
+    minecraft_server: Dict[str, str] = {
+        "host": "127.0.0.1",
+        "port": "25565",
+    }
+    
     remotemc_mcdr_flask: Dict[str, str] = {
         # Flask Server Config
         'host': "127.0.0.1",
