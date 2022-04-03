@@ -1,12 +1,14 @@
 from email import message
 from flask import Flask, request
 from waitress import serve
+from mcstatus import JavaServer
 
 from mcdreforged.api.all import *
 
 from remotemc_mcdr.util.html_response_util import *
 from remotemc_mcdr.util.i18n_util import *
 from remotemc_mcdr.util.json_util import *
+from remotemc_mcdr.util.config_util import *
 
 server: PluginServerInterface = ServerInterface.get_instance().as_plugin_server_interface()
 
@@ -16,11 +18,28 @@ flask_app.config['JSON_AS_ASCII'] = False
 flask_app.config['JSONIFY_MIMETYPE'] = "application/json; charset=utf-8"
 flask_app.config['DEBUG'] = True
 
+config: Configure
+
 auth_key: str = None
 
 @flask_app.route('/ping', methods=["GET"])
 def ping():
     return HtmlResponseUtil.get_200_response("PONG!")
+
+@flask_app.route('/api/v1/mcserver/status', methods=["GET"])
+def status():
+    minecraft_server = JavaServer.lookup(f"{config.minecraft_server['host']}:{config.minecraft_server['port']}")
+    query = minecraft_server.query()
+    message = "{0}\n{1}{2}\n{3}[{4}/{5}]".format(
+        i18n('status.server_running'), # {0}
+        i18n('status.game_version'), #{1}
+        query.software.version, # {2}
+        i18n('status.player_online'), # {3}
+        query.players.online, # {4}
+        query.players.max) # {5}
+    for player in query.players.names:
+        message = message + "\n> {0}".format(player)
+    return HtmlResponseUtil.get_200_response(message)
 
 @flask_app.route('/api/v1/mcserver/execute_command', methods=["POST"])
 def execute_command():
@@ -84,8 +103,12 @@ def broadcast():
     return HtmlResponseUtil.get_200_response()
 
 @new_thread('Flask@RemoteMC-MCDR')
-def run_flask(host: str, port: int, auth_key: str):
+def run_flask(configure: Configure):
+    global config, auth_key
+    config = configure
     # Start the Flask Server
+    host = config.remotemc_mcdr_flask['host']
+    port = int(config.remotemc_mcdr_flask['port'])
+    auth_key = config.remotemc['auth_key']
     server.logger.info(i18n('starting_flask', host, port))
-    globals()['auth_key'] = auth_key
     serve(flask_app, host=host, port=port)

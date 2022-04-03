@@ -9,3 +9,7 @@ remotemc_mcdr.starting_flask: §9正在于 {0}:{1} 启动 Flask 服务端...
 remotemc_mcdr.enable_rcon: 命令已执行！启用 rcon 以获取服务器执行信息
 
 remotemc_mcdr.broadcast: 广播
+
+remotemc_mcdr.status.server_running: 服务器运行中
+remotemc_mcdr.status.game_version: 游戏版本：
+remotemc_mcdr.status.player_online: 在线玩家：

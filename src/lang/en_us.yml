@@ -9,3 +9,7 @@ remotemc_mcdr.starting_flask: §9Starting Flask Server on {0}:{1}...
 remotemc_mcdr.enable_rcon: Command executed! Enable rcon to get server response.
 
 remotemc_mcdr.broadcast: Broadcast
+
+remotemc_mcdr.status.server_running: 'The Server is running'
+remotemc_mcdr.status.game_version: 'Game Version: '
+remotemc_mcdr.status.player_online: 'Player Online: '
