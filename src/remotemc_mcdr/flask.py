@@ -53,7 +53,7 @@ def say():
         return HtmlResponseUtil.get_400_response()
     
     content = request.get_json()
-    if not is_key_in_json[content, 'auth_key', 'source', 'sender', 'message']:
+    if not is_key_in_json(content, 'auth_key', 'source', 'sender', 'message'):
         return HtmlResponseUtil.get_400_response()
     
     if not auth_key == content['auth_key']:
@@ -72,7 +72,7 @@ def broadcast():
         return HtmlResponseUtil.get_400_response()
     
     content = request.get_json()
-    if not is_key_in_json[content, 'auth_key', 'message']:
+    if not is_key_in_json(content, 'auth_key', 'message'):
         return HtmlResponseUtil.get_400_response()
     
     if not auth_key == content['auth_key']:
