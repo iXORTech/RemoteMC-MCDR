@@ -2,3 +2,4 @@ mcdreforged >= 2.0.1
 Flask ~= 2.0.3
 waitress ~= 2.0.0
 mcstatus ~= 9.0.4
+packaging ~= 21.3
