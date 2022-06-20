@@ -3,7 +3,7 @@
 <h1 align="center">RemoteMC-MCDR</h1>
 
 <p align="center"> 
-  <b>[WIP] Processing and API Core of RemoteMC Series</b>
+  <b>[WIP] MCDReforged Plugin of RemoteMC Series</b>
 </p>
 
 ## 🎊 Thanks
@@ -41,7 +41,7 @@ Users can modify and redistribute the source code and use it for commercial prop
 
 
 ``` text
-RemoteMC-MCDR - Processing and API Core of RemoteMC Series
+RemoteMC-MCDR - MCDReforged Plugin of RemoteMC Series
 Copyright (C) 2022 iXOR Techbology, Cubik65536, and contributors.
 
 This program is free software: you can redistribute it and/or modify

@@ -3,7 +3,7 @@
 <h1 align="center">RemoteMC-MCDR</h1>
 
 <p align="center"> 
-  <b>[WIP] RemoteMC 系列处理与API核心</b>
+  <b>[WIP] RemoteMC 系列 MCDReforged 插件</b>
 </p>
 
 ## 🎊 鸣谢
@@ -41,7 +41,7 @@
 
 
 ``` text
-RemoteMC-MCDR - RemoteMC 系列处理与API核心
+RemoteMC-MCDR - RemoteMC 系列 MCDReforged 插件
 Copyright (C) 2022 iXOR Technology, Cubik65536 以及 所有贡献者 版权所有。
 
 本程序是自由软件：你可以根据自由软件基金会发布的 GNU Affero 通用公共许可证的条款，
