@@ -22,85 +22,91 @@ config: Configure
 
 auth_key: str = None
 
+
 @flask_app.route('/ping', methods=["GET"])
 def ping():
-    return HtmlResponseUtil.get_200_response("PONG!")
+    return get_200_response("PONG!")
+
 
 @flask_app.route('/api/v1/mcserver/status', methods=["GET"])
 def status():
     minecraft_server = JavaServer.lookup(f"{config.minecraft_server['host']}:{config.minecraft_server['port']}")
     query = minecraft_server.query()
     message = "{0}\n{1}{2}\n{3}[{4}/{5}]".format(
-        i18n('status.server_running'), # {0}
-        i18n('status.game_version'), #{1}
-        query.software.version, # {2}
-        i18n('status.player_online'), # {3}
-        query.players.online, # {4}
-        query.players.max) # {5}
+        i18n('status.server_running'),  # {0}
+        i18n('status.game_version'),  # {1}
+        query.software.version,  # {2}
+        i18n('status.player_online'),  # {3}
+        query.players.online,  # {4}
+        query.players.max)  # {5}
     for player in query.players.names:
         message = message + "\n> {0}".format(player)
-    return HtmlResponseUtil.get_200_response(message)
+    return get_200_response(message)
+
 
 @flask_app.route('/api/v1/mcserver/execute_command', methods=["POST"])
 def execute_command():
     if not request.is_json:
-        return HtmlResponseUtil.get_400_response()
-    
+        return get_400_response()
+
     content = request.get_json()
     if not is_key_in_json(content, 'auth_key', 'command'):
-        return HtmlResponseUtil.get_400_response()
-    
+        return get_400_response()
+
     if not auth_key == content['auth_key']:
-        return HtmlResponseUtil.get_401_response()
-    
+        return get_401_response()
+
     command: str = content['command']
-    
+
     is_rcon_running = server.is_rcon_running()
     if is_rcon_running:
         rcon_info = server.rcon_query(command)
         if rcon_info:
-            return HtmlResponseUtil.get_200_response(rcon_info)
+            return get_200_response(rcon_info)
         else:
-            return HtmlResponseUtil.get_200_response()
+            return get_200_response()
     else:
         server.execute_command(command)
-        return HtmlResponseUtil.get_200_response(i18n('enable_rcon'))
-    
+        return get_200_response(i18n('enable_rcon'))
+
+
 @flask_app.route('/api/v1/mcserver/say', methods=["POST"])
 def say():
     if not request.is_json:
-        return HtmlResponseUtil.get_400_response()
-    
+        return get_400_response()
+
     content = request.get_json()
     if not is_key_in_json(content, 'auth_key', 'source', 'sender', 'message'):
-        return HtmlResponseUtil.get_400_response()
-    
+        return get_400_response()
+
     if not auth_key == content['auth_key']:
-        return HtmlResponseUtil.get_401_response()
-    
+        return get_401_response()
+
     source = content['source']
     sender = content['sender']
     message = content['message']
-    
+
     server.say(f"[{source}] {sender}: {message}")
-    return HtmlResponseUtil.get_200_response()
+    return get_200_response()
+
 
 @flask_app.route('/api/v1/mcserver/broadcast', methods=["POST"])
 def broadcast():
     if not request.is_json:
-        return HtmlResponseUtil.get_400_response()
-    
+        return get_400_response()
+
     content = request.get_json()
     if not is_key_in_json(content, 'auth_key', 'message'):
-        return HtmlResponseUtil.get_400_response()
-    
+        return get_400_response()
+
     if not auth_key == content['auth_key']:
-        return HtmlResponseUtil.get_401_response()
-    
+        return get_401_response()
+
     message = content['message']
-    
+
     server.say(f"[{i18n('broadcast')}] {message}")
-    return HtmlResponseUtil.get_200_response()
+    return get_200_response()
+
 
 @new_thread('Flask@RemoteMC-MCDR')
 def run_flask(configure: Configure):
