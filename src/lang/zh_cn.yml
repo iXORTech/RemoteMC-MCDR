@@ -1,15 +1,26 @@
-remotemc_mcdr.plugin_loaded: RemoteMC-MCDR 插件已加载完成
-remotemc_mcdr.version: 软件版本：{0}
-remotemc_mcdr.json_parsing_error: §c自定义 JSON 解析错误
-remotemc_mcdr.experimental: §c该程序仍然处于实验阶段，请不要应用于生产环境！
-remotemc_mcdr.release_candidate: §c该程序仍然处于发布候选阶段，请不要应用于生产环境！
-remotemc_mcdr.loading_flask: §9正在加载 Flask 框架...
-remotemc_mcdr.starting_flask: §9正在于 {0}:{1} 启动 Flask 服务端...
+remotemc_mcdr:
+  plugin_loaded: RemoteMC-MCDR 插件已加载完成
+  version: 软件版本：{0}
+  json_parsing_error: §c自定义 JSON 解析错误
+  experimental: §c该程序仍然处于实验阶段，请不要应用于生产环境！
+  release_candidate: §c该程序仍然处于发布候选阶段，请不要应用于生产环境！
+  loading_flask: §9正在加载 Flask 框架...
+  starting_flask: §9正在于 {0}:{1} 启动 Flask 服务端...
+  
+  enable_rcon: 命令已执行！启用 rcon 以获取服务器执行信息
+  
+  broadcast: 广播
 
-remotemc_mcdr.enable_rcon: 命令已执行！启用 rcon 以获取服务器执行信息
-
-remotemc_mcdr.broadcast: 广播
-
-remotemc_mcdr.status.server_running: 服务器运行中
-remotemc_mcdr.status.game_version: 游戏版本：
-remotemc_mcdr.status.player_online: 在线玩家：
+  status:
+    server_running: 服务器运行中
+    game_version: 游戏版本：
+    player_online: 在线玩家：
+  
+  in_game:
+    click_to_use_command: '点击使用 §7{0}§r 命令'
+    help_message:
+      line1: '-------------------- RemoteMC-MCDR v{0} --------------------'
+      line2: 'RemoteMC 系列 MCDReforged 插件'
+      line3: '§7!!remotemc §r显示此帮助信息'
+      line4: '§7!!msg §3<Message> §r向所有 Minecraft 服务器和聊天群发送消息'
+      line5: '§7!!broadcast §3<Message> §r向所有 Minecraft 服务器和聊天群广播'
