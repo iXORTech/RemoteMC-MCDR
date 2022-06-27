@@ -5,7 +5,6 @@ from threading import Lock
 from traceback import print_exc
 
 import requests
-from mcdreforged.api.all import *
 
 from remotemc_mcdr.util.i18n_util import *
 

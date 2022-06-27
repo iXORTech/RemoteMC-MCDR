@@ -1,5 +1,3 @@
-from mcdreforged.api.all import *
-
 from remotemc_mcdr.flask import *
 from remotemc_mcdr.commands.help_command import *
 from remotemc_mcdr.constants import *
