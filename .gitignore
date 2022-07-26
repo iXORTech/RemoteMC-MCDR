@@ -11,3 +11,6 @@ build*
 
 # macOS File System
 .DS_Store
+
+# Version Properties Files
+version.*
