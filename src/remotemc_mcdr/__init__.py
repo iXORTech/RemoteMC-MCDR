@@ -3,6 +3,7 @@ from remotemc_mcdr.commands.help_command import *
 from remotemc_mcdr.constants import *
 from remotemc_mcdr.util.i18n_util import *
 from remotemc_mcdr.util.config_util import *
+from remotemc_mcdr.util.version_util import *
 
 config: Configure
 server: PluginServerInterface = None
@@ -23,14 +24,16 @@ def load_flask():
 def on_load(plugin_server_interface: PluginServerInterface, prev):
     global server, config
     server = plugin_server_interface
+    load_version_properties()
     config = load_config(server, server.get_plugin_command_source())
     register_commands(server)
     server.logger.info("==========================================================")
     server.logger.info(i18n('plugin_loaded'))
-    server.logger.info(i18n('version', VERSION))
-    if "dev" in VERSION or "alpha" in VERSION or "beta" in VERSION:
+    server.logger.info(i18n('version', get_version()))
+    stage = get_version_property("stage")
+    if "dev" in stage or "alpha" in stage or "beta" in stage:
         server.logger.info(i18n('logger.warning.experimental'))
-    elif "rc" in VERSION:
+    elif "rc" in stage:
         server.logger.info(i18n('logger.warning.release_candidate'))
     server.logger.info("==========================================================")
 

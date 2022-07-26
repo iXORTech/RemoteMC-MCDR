@@ -1,13 +1,12 @@
 import re
 
-from remotemc_mcdr.constants import *
-
 from remotemc_mcdr.util.i18n_util import *
+from remotemc_mcdr.util.version_util import *
 
 
 def show_help(source: CommandSource):
     help_msg_lines = ['\n',
-                      i18n('in_game.help_message.line1', VERSION) + '\n',
+                      i18n('in_game.help_message.line1', get_version()) + '\n',
                       i18n('in_game.help_message.line2') + '\n',
                       i18n('in_game.help_message.line3') + '\n',
                       i18n('in_game.help_message.line4') + '\n',
