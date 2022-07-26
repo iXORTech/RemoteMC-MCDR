@@ -5,7 +5,7 @@ version = "0.0.1"
 stage = "dev"
 revision = "0000000"
 with os.popen("git rev-parse --short=7 HEAD") as f:
-    revision = f.readline()
+    revision = f.readline().strip()
 
 version_properties = {
     "version": version,
