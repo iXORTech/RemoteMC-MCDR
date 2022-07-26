@@ -2,8 +2,8 @@ remotemc_mcdr:
   plugin_loaded: RemoteMC-MCDR 插件已加载完成
   version: 软件版本：{0}
   json_parsing_error: §c自定义 JSON 解析错误
-  experimental: §c该程序仍然处于实验阶段，请不要应用于生产环境！
-  release_candidate: §c该程序仍然处于发布候选阶段，请不要应用于生产环境！
+  logger.warningexperimental: §c该程序仍然处于实验阶段，请不要应用于生产环境！
+  logger.warningrelease_candidate: §c该程序仍然处于发布候选阶段，请不要应用于生产环境！
   loading_flask: §9正在加载 Flask 框架...
   starting_flask: §9正在于 {0}:{1} 启动 Flask 服务端...
   
