@@ -65,7 +65,7 @@ def execute_command():
         return get_200_response(i18n('enable_rcon'))
 
 
-@flask_app.route('/api/v1/mcserver/say', methods=["POST"])
+@flask_app.route('/api/v1/mcserver/send_message', methods=["POST"])
 def say():
     if not request.is_json:
         return get_400_response()
