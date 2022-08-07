@@ -71,7 +71,7 @@ def say():
         return get_400_response()
 
     content = request.get_json()
-    if not is_key_in_json(content, 'auth_key', 'source', 'sender', 'message'):
+    if not is_key_in_json(content, 'auth_key', 'sender_id', 'source', 'sender', 'message'):
         return get_400_response()
 
     if not auth_key == content['auth_key']:
