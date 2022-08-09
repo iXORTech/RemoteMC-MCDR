@@ -21,7 +21,7 @@ def register_commands(server: PluginServerInterface):
             GreedyText('message').runs(send_message)
         )
     )
-    serve.register_command(
+    server.register_command(
         Literal(BROADCAST_COMMAND_PREFIX).then(
             GreedyText('message').runs(broadcast)
         )
