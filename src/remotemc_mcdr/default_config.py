@@ -16,7 +16,11 @@ class Configure(Serializable):
         "auth_key": "you_should_change_this",
     }
 
-    server_name: str = "RemoteMC-MCDR Default Server Name"
+    remotemc_core: Dict[str, str] = {
+        'host': "127.0.0.1",
+        'port': "65360",
+        'ssl': "false",
+    }
     
     minecraft_server: Dict[str, str] = {
         "host": "127.0.0.1",
@@ -28,10 +32,6 @@ class Configure(Serializable):
         'host': "127.0.0.1",
         'port': "65362",
     }
-    
-    remotemc_core: Dict[str, str] = {
-        'host': "127.0.0.1",
-        'port': "65360",
-        'ssl': "false",
-    }
+
+    server_name: str = "RemoteMC-MCDR Default Server Name"
     
