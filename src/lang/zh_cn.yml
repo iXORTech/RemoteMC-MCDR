@@ -26,4 +26,5 @@ remotemc_mcdr:
       line5: '§7!!broadcast §3<Message> §r向所有 Minecraft 服务器和聊天群广播'
 
   message_and_broadcast:
+    sender_id_generated: 'Sender ID 已生成：{0}'
     console: '控制台'
