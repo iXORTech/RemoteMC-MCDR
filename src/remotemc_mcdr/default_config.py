@@ -34,4 +34,9 @@ class Configure(Serializable):
     }
 
     server_name: str = "RemoteMC-MCDR Default Server Name"
+
+    permission: Dict[str, int] = {
+        'msg': 0,
+        'broadcast': 3
+    }
     
