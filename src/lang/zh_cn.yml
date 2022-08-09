@@ -24,3 +24,6 @@ remotemc_mcdr:
       line3: '§7!!remotemc §r显示此帮助信息'
       line4: '§7!!msg §3<Message> §r向所有 Minecraft 服务器和聊天群发送消息'
       line5: '§7!!broadcast §3<Message> §r向所有 Minecraft 服务器和聊天群广播'
+
+  message_and_broadcast:
+    console: '控制台'

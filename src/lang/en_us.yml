@@ -24,3 +24,6 @@ remotemc_mcdr:
       line3: '§7!!remotemc §rShow this help message'
       line4: '§7!!msg §3<Message> §rSend message to all Minecraft servers and chat groups'
       line5: '§7!!broadcast §3<Message> §rBroadcast to all Minecraft servers and chat groups'
+
+  message_and_broadcast:
+    console: 'Console'
