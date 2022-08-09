@@ -31,6 +31,6 @@ remotemc_mcdr:
     sending_message: 'Sending message... sender_id: {0}, source: {1}, sender: {2}, message: {3}'
     core_url: 'RemoteMC-Core URL: {0}'
     core_connection_error: 'Message send unsuccessfully! Cannot connect to RemoteMC-Core! Is RemoteMC-Core running? ConnectionError: {0}'
-    response_received: 'Response received. Status: {0}, Message: {1}'
+    sucessful_execution_response_received: 'Message sent successfully. Status: {0}, Message: {1}'
     unsucessful_execution_response_received: 'An error occurred when trying to send the message. Status: {0}, Message: {1}'
     received_message_from_self: 'Received message sent from this server, ignore it.'
