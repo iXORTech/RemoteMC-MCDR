@@ -28,3 +28,8 @@ remotemc_mcdr:
   message_and_broadcast:
     sender_id_generated: 'Sender ID 已生成：{0}'
     console: '控制台'
+    sending_message: '正在发送消息... sender_id: {0}, source: {1}, sender: {2}, message: {3}'
+    core_url: 'RemoteMC-Core URL：{0}'
+    core_connection_error: '无法连接到 RemoteMC-Core！RemoteMC-Core 是否正在运行？连接错误：{0}'
+    response_received: '响应已接收。状态：{0}，消息：{1}'
+    received_message_from_self: '接收到来自本服务器的消息，忽略。'

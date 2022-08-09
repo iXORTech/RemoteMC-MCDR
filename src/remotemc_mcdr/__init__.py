@@ -1,9 +1,11 @@
 from remotemc_mcdr.flask import *
 from remotemc_mcdr.commands.help_command import *
+from remotemc_mcdr.commands.msg_command import *
 from remotemc_mcdr.constants import *
 from remotemc_mcdr.util.i18n_util import *
 from remotemc_mcdr.util.config_util import *
 from remotemc_mcdr.util.version_util import *
+from remotemc_mcdr.util.sender_id_util import generate_sender_id
 
 config: Configure
 server: PluginServerInterface = None
@@ -12,6 +14,11 @@ server: PluginServerInterface = None
 def register_commands(server: PluginServerInterface):
     server.register_command(
         Literal(CONTROL_COMMAND_PREFIX).runs(show_help)
+    )
+    server.register_command(
+        Literal(MESSAGE_COMMAND_PREFIX).then(
+            GreedyText('message').runs(send_message)
+        )
     )
 
 

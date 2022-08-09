@@ -81,6 +81,7 @@ def say():
     sender_id = content['sender_id']
 
     if is_the_same_sender_id(sender_id):
+        server.logger.info(i18n('message_and_broadcast.received_message_from_self'))
         return get_200_response()
 
     source = content['source']
