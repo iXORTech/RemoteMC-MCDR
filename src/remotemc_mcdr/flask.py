@@ -4,6 +4,7 @@ from mcstatus import JavaServer
 
 from remotemc_mcdr.util.html_response_util import *
 from remotemc_mcdr.util.config_util import *
+from remotemc_mcdr.util.sender_id_util import is_the_same_sender_id
 
 server: PluginServerInterface = ServerInterface.get_instance().as_plugin_server_interface()
 
@@ -76,6 +77,11 @@ def say():
 
     if not auth_key == content['auth_key']:
         return get_401_response()
+
+    sender_id = content['sender_id']
+
+    if is_the_same_sender_id(sender_id):
+        return get_200_response()
 
     source = content['source']
     sender = content['sender']
