@@ -15,6 +15,8 @@ class Configure(Serializable):
     remotemc: Dict[str, str] = {
         "auth_key": "you_should_change_this",
     }
+
+    server_name: str = "RemoteMC-MCDR Default Server Name"
     
     minecraft_server: Dict[str, str] = {
         "host": "127.0.0.1",
