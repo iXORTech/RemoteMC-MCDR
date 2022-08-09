@@ -1,6 +1,7 @@
 from remotemc_mcdr.flask import *
 from remotemc_mcdr.commands.help_command import *
 from remotemc_mcdr.commands.msg_command import *
+from remotemc_mcdr.commands.broadcast_command import *
 from remotemc_mcdr.constants import *
 from remotemc_mcdr.util.i18n_util import *
 from remotemc_mcdr.util.config_util import *
@@ -18,6 +19,11 @@ def register_commands(server: PluginServerInterface):
     server.register_command(
         Literal(MESSAGE_COMMAND_PREFIX).then(
             GreedyText('message').runs(send_message)
+        )
+    )
+    serve.register_command(
+        Literal(BROADCAST_COMMAND_PREFIX).then(
+            GreedyText('message').runs(broadcast)
         )
     )
 
