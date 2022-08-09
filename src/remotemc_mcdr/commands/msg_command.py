@@ -39,10 +39,14 @@ def send_message(source: CommandSource, context: dict):
         server.say(i18n('message_and_broadcast.core_connection_error', error))
         return
 
-    server.logger.info(i18n('message_and_broadcast.response_received',
-                            remotemc_core_response.status_code,
-                            remotemc_core_response.text))
-
-    if remotemc_core_response.status_code != 200:
-        server.logger.info(i18n('message_and_broadcast.message_sent'))
-        server.say(i18n('message_and_broadcast.message_sent'))
+    if remotemc_core_response.status_code == 200:
+        server.logger.info(i18n('message_and_broadcast.sucessful_execution_response_received',
+                                remotemc_core_response.status_code,
+                                remotemc_core_response.text))
+    else:
+        server.logger.warning(i18n('unsucessful_execution_response_received',
+                                   remotemc_core_response.status_code,
+                                   remotemc_core_response.text))
+        server.say(i18n('unsucessful_execution_response_received',
+                        remotemc_core_response.status_code,
+                        remotemc_core_response.text))
