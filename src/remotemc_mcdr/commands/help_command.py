@@ -1,5 +1,3 @@
-import re
-
 from remotemc_mcdr.util.i18n_util import *
 from remotemc_mcdr.util.version_util import *
 
