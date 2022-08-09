@@ -12,6 +12,9 @@ remotemc_mcdr:
   message: Message
   broadcast: Broadcast
 
+  command_permission_level: The permission level of command {0} is {1}
+  command_perm_denied: You do not have permission to use this command.
+
   status:
     server_running: 'The Server is running'
     game_version: 'Game Version: '

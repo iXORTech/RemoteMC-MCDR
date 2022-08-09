@@ -12,6 +12,9 @@ remotemc_mcdr:
   message: 消息
   broadcast: 广播
 
+  command_permission_level: 命令 {0} 的权限等级为 {1}
+  command_perm_denied: 你没有权限使用该命令。
+
   status:
     server_running: 服务器运行中
     game_version: 游戏版本：
