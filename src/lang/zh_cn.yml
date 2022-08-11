@@ -32,6 +32,10 @@ remotemc_mcdr:
       sender: "发送者：{0}"
       message: "消息：{0}"
 
+  sender_id:
+    generating: "正在生成发送者 ID ..."
+    generated: "发送者 ID 已生成：{0}"
+
   command:
     permission_level: "命令 {0} 所需的权限等级为 {1}"
     permission_denied: "你没有权限使用该命令。"
