@@ -16,9 +16,10 @@ def register_commands(server: PluginServerInterface):
     def get_literal_node(literal):
         server.logger.info(i18n('command.getting_literal_node', literal))
         lvl = config.permission.get(literal, 0)
-        server.logger.info(i18n('command_permission_level', literal, lvl))
+        server.logger.info(i18n('command.permission_level', literal, lvl))
         return Literal(f'!!{literal}').requires(lambda src: src.has_permission(lvl),
-                                         lambda: i18n('command_perm_denied'))
+                                                lambda: i18n('command.permission_denied'))
+
     server.register_command(
         get_literal_node(CONTROL_COMMAND_PREFIX).runs(show_help)
     )

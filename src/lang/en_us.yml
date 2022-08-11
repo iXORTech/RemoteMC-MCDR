@@ -12,10 +12,9 @@ remotemc_mcdr:
   message: Message
   broadcast: Broadcast
 
-  command_permission_level: The permission level of command {0} is {1}
-  command_perm_denied: You do not have permission to use this command.
-
   command:
+    permission_level: 'The permission level of command {0} is {1}'
+    permission_denied: 'You do not have permission to use this command.'
     getting_literal_node: 'Getting literal node {0} (command !!{0})'
     registered: 'Command !!{0} registered.'
 
