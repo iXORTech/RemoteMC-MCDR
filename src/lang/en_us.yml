@@ -33,6 +33,10 @@ remotemc_mcdr:
       sender: "Sender: {0}"
       message: "Message: {0}"
 
+  sender_id:
+    generating: "Generating sender ID..."
+    generated: "Generated sender ID: {0}"
+
   command:
     permission_level: "The permission level of command {0} is {1}"
     permission_denied: "You do not have permission to use this command."
