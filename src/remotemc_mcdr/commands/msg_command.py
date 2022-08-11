@@ -45,11 +45,11 @@ def send_message(source: CommandSource, context: dict):
                                 remotemc_core_response.status_code,
                                 remotemc_core_response.text))
     else:
-        server.logger.warning(i18n("unsucessful_execution_response_received",
+        server.logger.warning(i18n("message_and_broadcast.unsucessful_execution_response_received",
                                    i18n("message"),
                                    remotemc_core_response.status_code,
                                    remotemc_core_response.text))
-        server.say(i18n("unsucessful_execution_response_received",
+        server.say(i18n("message_and_broadcast.unsucessful_execution_response_received",
                         i18n("message"),
                         remotemc_core_response.status_code,
                         remotemc_core_response.text))
