@@ -42,7 +42,7 @@ Users can modify and redistribute the source code and use it for commercial prop
 
 ``` text
 RemoteMC-MCDR - MCDReforged Plugin of RemoteMC Series
-Copyright (C) 2022 iXOR Techbology, Cubik65536, and contributors.
+Copyright (C) 2022 iXOR Technology, Cubik65536, and contributors.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published
