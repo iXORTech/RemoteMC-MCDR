@@ -86,24 +86,31 @@ def say():
     server.logger.info(i18n("flask.received_post", "/api/v1/mcserver/send_message"))
 
     if not request.is_json:
+        server.logger.error(i18n("flask.request_is_not_json"))
         return get_400_response()
 
     content = request.get_json()
     if not is_key_in_json(content, "auth_key", "sender_id", "source", "sender", "message"):
+        server.logger.error(i18n("flask.request_missing_keys_in_json"))
         return get_400_response()
 
     if not auth_key == content["auth_key"]:
+        server.logger.error(i18n("flask.auth_key_not_match"))
         return get_401_response()
 
     sender_id = content["sender_id"]
+    server.logger.info(i18n("flask.say.sender_id", sender_id))
 
     if is_the_same_sender_id(sender_id):
         server.logger.info(i18n("message_and_broadcast.received_message_from_self"))
         return get_200_response()
 
     source = content["source"]
+    server.logger.info(i18n("flask.say.source", source))
     sender = content["sender"]
+    server.logger.info(i18n("flask.say.sender", sender))
     message = content["message"]
+    server.logger.info(i18n("flask.say.message", message))
 
     server.say(f"[{source}] {sender}: {message}")
     return get_200_response()
