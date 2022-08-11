@@ -15,8 +15,16 @@ remotemc_mcdr:
   flask:
     received_get: "接收请求到 {0} 的 GET 请求"
     received_post: "接收请求到 {0} 的 POST 请求"
+    request_is_not_json: "请求不是 JSON 格式"
+    request_missing_keys_in_json: "请求 JSON 中缺少预期的值"
+    auth_key_not_match: "请求与配置中的 Auth Key 不匹配"
     status:
       looking_up_server: "正在查找 Minecraft 服务器 {0} ..."
+    execute_command:
+      executing_command: "正在执行命令：{0}"
+      rcon_is_running: "Rcon 正在运行中"
+      rcon_is_not_running: "Rcon 未运行"
+      command_executed: "命令执行完成"
 
   command:
     permission_level: "命令 {0} 所需的权限等级为 {1}"

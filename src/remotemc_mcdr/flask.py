@@ -50,26 +50,34 @@ def execute_command():
     server.logger.info(i18n("flask.received_post", "/api/v1/mcserver/execute_command"))
 
     if not request.is_json:
+        server.logger.error(i18n("flask.request_is_not_json"))
         return get_400_response()
 
     content = request.get_json()
     if not is_key_in_json(content, "auth_key", "command"):
+        server.logger.error(i18n("flask.request_missing_keys_in_json"))
         return get_400_response()
 
     if not auth_key == content["auth_key"]:
+        server.logger.error(i18n("flask.auth_key_not_match"))
         return get_401_response()
 
     command: str = content["command"]
+    server.logger.info(i18n("flask.execute_command.executing_command", command))
 
     is_rcon_running = server.is_rcon_running()
     if is_rcon_running:
+        server.logger.info(i18n("flask.execute_command.rcon_is_running"))
         rcon_info = server.rcon_query(command)
+        server.logger.info(i18n("flask.execute_command.command_executed"))
         if rcon_info:
             return get_200_response(rcon_info)
         else:
             return get_200_response()
     else:
+        server.logger.info(i18n("flask.execute_command.rcon_is_not_running"))
         server.execute_command(command)
+        server.logger.info(i18n("flask.execute_command.command_executed"))
         return get_200_response(i18n("enable_rcon"))
 
 
