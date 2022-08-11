@@ -81,12 +81,14 @@ body:
       description: |
         示例：
           - **操作系统**：macOS Monterey 12.3
-          - **Java 版本**：Temurin-17.0.1+12
+          - **Python 版本** (可以通过 `python --version` 命令获得): Python 3.10.5
+          - **MCDReforged 版本** (可以通过 `pip show mcdreforged` 命令获得): 2.2.1
           - **RemoteMC-MCDR 版本 (或 commit 号)**：0.1.2 (或 5da64db)
       value: |
         - **操作系统**：
-        - **Java 版本：**：
-        - **RemoteMC-MCDR 版本 (或 commit 号)：**：
+        - **Python 版本**：
+        - **MCDReforged 版本**：
+        - **RemoteMC-MCDR 版本 (或 commit 号)**：
       render: Markdown
 
   - type: markdown

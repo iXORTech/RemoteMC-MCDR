@@ -82,11 +82,13 @@ body:
       description: |
         examples:
           - **Operating System**: macOS Monterey 12.3
-          - **Java Version**: Temurin-17.0.1+12
+          - **Python Version** (can be get with `python --version` command): Python 3.10.5
+          - **MCDReforged Version** (can be get with `pip show mcdreforged` command): 2.2.1
           - **RemoteMC-MCDR Version (or Commit)**: 0.1.2 (or 5da64db)
       value: |
         - **Operating System**:
-        - **Java Version**:
+        - **Python Version**:
+        - **MCDReforged Version**:
         - **RemoteMC-MCDR Version (or Commit)**:
       render: Markdown
 
