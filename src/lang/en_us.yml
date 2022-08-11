@@ -26,6 +26,11 @@ remotemc_mcdr:
       rcon_is_running: "Rcon is running"
       rcon_is_not_running: "Rcon is not running"
       command_executed: "Command executed"
+    say:
+      sender_id: "Sender ID: {0}"
+      source: "Source: {0}"
+      sender: "Sender: {0}"
+      message: "Message: {0}"
 
   command:
     permission_level: "The permission level of command {0} is {1}"

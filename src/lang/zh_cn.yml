@@ -25,6 +25,11 @@ remotemc_mcdr:
       rcon_is_running: "Rcon 正在运行中"
       rcon_is_not_running: "Rcon 未运行"
       command_executed: "命令执行完成"
+    say:
+      sender_id: "发送者 ID：{0}"
+      source: "来源：{0}"
+      sender: "发送者：{0}"
+      message: "消息：{0}"
 
   command:
     permission_level: "命令 {0} 所需的权限等级为 {1}"
