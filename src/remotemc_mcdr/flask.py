@@ -121,16 +121,20 @@ def broadcast():
     server.logger.info(i18n("flask.received_post", "/api/v1/mcserver/broadcast"))
 
     if not request.is_json:
+        server.logger.error(i18n("flask.request_is_not_json"))
         return get_400_response()
 
     content = request.get_json()
     if not is_key_in_json(content, "auth_key", "message"):
+        server.logger.error(i18n("flask.request_missing_keys_in_json"))
         return get_400_response()
 
     if not auth_key == content["auth_key"]:
+        server.logger.error(i18n("flask.auth_key_not_match"))
         return get_401_response()
 
     message = content["message"]
+    server.logger.info(i18n("flask.say.message", message))
 
     server.say(f"[{i18n('broadcast')}] {message}")
     return get_200_response()
