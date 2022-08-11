@@ -12,6 +12,10 @@ remotemc_mcdr:
   message: "Message"
   broadcast: "Broadcast"
 
+  flask:
+    received_get: "Received GET request to {0}"
+    received_post: "Received POST request to {0}"
+
   command:
     permission_level: "The permission level of command {0} is {1}"
     permission_denied: "You do not have permission to use this command."

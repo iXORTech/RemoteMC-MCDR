@@ -12,6 +12,10 @@ remotemc_mcdr:
   message: "消息"
   broadcast: "广播"
 
+  flask:
+    received_get: "接收请求到 {0} 的 GET 请求"
+    received_post: "接收请求到 {0} 的 POST 请求"
+
   command:
     permission_level: "命令 {0} 所需的权限等级为 {1}"
     permission_denied: "你没有权限使用该命令。"
