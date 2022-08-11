@@ -12,11 +12,11 @@ remotemc_mcdr:
   message: 消息
   broadcast: 广播
 
-  command_permission_level: 命令 {0} 的权限等级为 {1}
-  command_perm_denied: 你没有权限使用该命令。
-
   command:
+    permission_level: '命令 {0} 所需的权限等级为 {1}'
+    permission_denied: '你没有权限使用该命令。'
     getting_literal_node: '获取字面量节点 {0} (!!{0} 命令)'
+    registered: '命令 !!{0} 已注册。'
 
   status:
     server_running: 服务器运行中
