@@ -15,6 +15,9 @@ remotemc_mcdr:
   command_permission_level: 命令 {0} 的权限等级为 {1}
   command_perm_denied: 你没有权限使用该命令。
 
+  command:
+    getting_literal_node: '获取字面量节点 {0} (!!{0} 命令)'
+
   status:
     server_running: 服务器运行中
     game_version: 游戏版本：
