@@ -28,7 +28,9 @@ def ping():
 @flask_app.route("/api/v1/mcserver/status", methods=["GET"])
 def status():
     server.logger.info(i18n("flask.received_get", "/api/v1/mcserver/status"))
-    minecraft_server = JavaServer.lookup(f"{config.minecraft_server['host']}:{config.minecraft_server['port']}")
+    minecraft_server_address = f"{config.minecraft_server['host']}:{config.minecraft_server['port']}"
+    minecraft_server = JavaServer.lookup(minecraft_server_address)
+    server.logger.info(i18n("flask.status.looking_up_server", minecraft_server_address))
     query = minecraft_server.query()
     message = "{0}\n{1}{2}\n{3}[{4}/{5}]".format(
         i18n("status.server_running"),  # {0}
@@ -39,6 +41,7 @@ def status():
         query.players.max)  # {5}
     for player in query.players.names:
         message = message + "\n> {0}".format(player)
+    server.logger.info(i18n("flask.status.server_status", message))
     return get_200_response(message)
 
 
