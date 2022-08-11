@@ -1,16 +1,16 @@
 remotemc_mcdr:
-  plugin_loaded: RemoteMC-MCDR 插件已加载完成
-  version: 软件版本：{0}
-  json_parsing_error: §c自定义 JSON 解析错误
-  logger.warning.experimental: §c该程序仍然处于实验阶段，请不要应用于生产环境！
-  logger.warning.release_candidate: §c该程序仍然处于发布候选阶段，请不要应用于生产环境！
-  loading_flask: §9正在加载 Flask 框架...
-  starting_flask: §9正在于 {0}:{1} 启动 Flask 服务端...
+  plugin_loaded: 'RemoteMC-MCDR 插件已加载完成'
+  version: '软件版本：{0}'
+  json_parsing_error: '§c自定义 JSON 解析错误'
+  logger.warning.experimental: '§c该程序仍然处于实验阶段，请不要应用于生产环境！'
+  logger.warning.release_candidate: '§c该程序仍然处于发布候选阶段，请不要应用于生产环境！'
+  loading_flask: '§9正在加载 Flask 框架...'
+  starting_flask: '§9正在于 {0}:{1} 启动 Flask 服务端...'
   
-  enable_rcon: 命令已执行！启用 rcon 以获取服务器执行信息
+  enable_rcon: '命令已执行！启用 rcon 以获取服务器执行信息'
 
-  message: 消息
-  broadcast: 广播
+  message: '消息'
+  broadcast: '广播'
 
   command:
     permission_level: '命令 {0} 所需的权限等级为 {1}'
@@ -19,9 +19,9 @@ remotemc_mcdr:
     registered: '命令 !!{0} 已注册。'
 
   status:
-    server_running: 服务器运行中
-    game_version: 游戏版本：
-    player_online: 在线玩家：
+    server_running: '服务器运行中'
+    game_version: '游戏版本：'
+    player_online: '在线玩家：'
   
   in_game:
     click_to_use_command: '点击使用 §7{0}§r 命令'

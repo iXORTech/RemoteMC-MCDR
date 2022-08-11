@@ -1,16 +1,16 @@
 remotemc_mcdr:
-  plugin_loaded: RemoteMC-MCDR Plugin Loaded
+  plugin_loaded: 'RemoteMC-MCDR Plugin Loaded'
   version: 'Version: {0}'
-  json_parsing_error: §cCustom JSON Parsing Error
-  logger.warning.experimental: §cTHIS IS IN EXPERIMENTAL STAGE, DO NOT USE IN PRODUCTION ENVIRONMENT!
-  logger.warning.release_candidate: §cTHIS IS A RELEASE CANDIDATE, DO NOT USE IN PRODUCTION ENVIRONMENT!
-  loading_flask: §9Loading Flask framework...
-  starting_flask: §9Starting Flask Server on {0}:{1}...
+  json_parsing_error: '§cCustom JSON Parsing Error'
+  logger.warning.experimental: '§cTHIS IS IN EXPERIMENTAL STAGE, DO NOT USE IN PRODUCTION ENVIRONMENT!'
+  logger.warning.release_candidate: '§cTHIS IS A RELEASE CANDIDATE, DO NOT USE IN PRODUCTION ENVIRONMENT!'
+  loading_flask: '§9Loading Flask framework...'
+  starting_flask: '§9Starting Flask Server on {0}:{1}...'
 
-  enable_rcon: Command executed! Enable rcon to get server response.
+  enable_rcon: 'Command executed! Enable rcon to get server response.'
 
-  message: Message
-  broadcast: Broadcast
+  message: 'Message'
+  broadcast: 'Broadcast'
 
   command:
     permission_level: 'The permission level of command {0} is {1}'
