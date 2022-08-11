@@ -1,44 +1,44 @@
 remotemc_mcdr:
-  plugin_loaded: 'RemoteMC-MCDR Plugin Loaded'
-  version: 'Version: {0}'
-  json_parsing_error: '§cCustom JSON Parsing Error'
-  logger.warning.experimental: '§cTHIS IS IN EXPERIMENTAL STAGE, DO NOT USE IN PRODUCTION ENVIRONMENT!'
-  logger.warning.release_candidate: '§cTHIS IS A RELEASE CANDIDATE, DO NOT USE IN PRODUCTION ENVIRONMENT!'
-  loading_flask: '§9Loading Flask framework...'
-  starting_flask: '§9Starting Flask Server on {0}:{1}...'
+  plugin_loaded: "RemoteMC-MCDR Plugin Loaded"
+  version: "Version: {0}"
+  json_parsing_error: "§cCustom JSON Parsing Error"
+  logger.warning.experimental: "§cTHIS IS IN EXPERIMENTAL STAGE, DO NOT USE IN PRODUCTION ENVIRONMENT!"
+  logger.warning.release_candidate: "§cTHIS IS A RELEASE CANDIDATE, DO NOT USE IN PRODUCTION ENVIRONMENT!"
+  loading_flask: "§9Loading Flask framework..."
+  starting_flask: "§9Starting Flask Server on {0}:{1}..."
 
-  enable_rcon: 'Command executed! Enable rcon to get server response.'
+  enable_rcon: "Command executed! Enable rcon to get server response."
 
-  message: 'Message'
-  broadcast: 'Broadcast'
+  message: "Message"
+  broadcast: "Broadcast"
 
   command:
-    permission_level: 'The permission level of command {0} is {1}'
-    permission_denied: 'You do not have permission to use this command.'
-    getting_literal_node: 'Getting literal node {0} (command !!{0})'
-    registered: 'Command !!{0} registered.'
+    permission_level: "The permission level of command {0} is {1}"
+    permission_denied: "You do not have permission to use this command."
+    getting_literal_node: "Getting literal node {0} (command !!{0})"
+    registered: "Command !!{0} registered."
 
   status:
-    server_running: 'The Server is running'
-    game_version: 'Game Version: '
-    player_online: 'Player Online: '
+    server_running: "The Server is running"
+    game_version: "Game Version: "
+    player_online: "Player Online: "
 
   in_game:
-    click_to_use_command: 'Click to use command §7{0}§r'
+    click_to_use_command: "Click to use command §7{0}§r"
     help_message:
-      line1: '-------------------- RemoteMC-MCDR v{0} --------------------'
-      line2: 'MCDReforged Plugin of RemoteMC Series'
-      line3: '§7!!remotemc §rShow this help message'
-      line4: '§7!!msg §3<Message> §rSend message to all Minecraft servers and chat groups'
-      line5: '§7!!broadcast §3<Message> §rBroadcast to all Minecraft servers and chat groups'
+      line1: "-------------------- RemoteMC-MCDR v{0} --------------------"
+      line2: "MCDReforged Plugin of RemoteMC Series"
+      line3: "§7!!remotemc §rShow this help message"
+      line4: "§7!!msg §3<Message> §rSend message to all Minecraft servers and chat groups"
+      line5: "§7!!broadcast §3<Message> §rBroadcast to all Minecraft servers and chat groups"
 
   message_and_broadcast:
-    sender_id_generated: 'Sender ID generated: {0}'
-    console: 'Console'
-    sending_message: 'Sending message... sender_id: {0}, source: {1}, sender: {2}, message: {3}'
-    broadcasting: 'Broadcasting... message: {0}'
-    core_url: 'RemoteMC-Core URL: {0}'
-    core_connection_error: '{0} send unsuccessfully! Cannot connect to RemoteMC-Core! Is RemoteMC-Core running? ConnectionError: {1}'
-    sucessful_execution_response_received: '{0} sent successfully. Status: {1}, Message: {2}'
-    unsucessful_execution_response_received: 'An error occurred when trying to send the {0}. Status: {1}, Message: {2}'
-    received_message_from_self: 'Received message sent from this server, ignore it.'
+    sender_id_generated: "Sender ID generated: {0}"
+    console: "Console"
+    sending_message: "Sending message... sender_id: {0}, source: {1}, sender: {2}, message: {3}"
+    broadcasting: "Broadcasting... message: {0}"
+    core_url: "RemoteMC-Core URL: {0}"
+    core_connection_error: "{0} send unsuccessfully! Cannot connect to RemoteMC-Core! Is RemoteMC-Core running? ConnectionError: {1}"
+    sucessful_execution_response_received: "{0} sent successfully. Status: {1}, Message: {2}"
+    unsucessful_execution_response_received: "An error occurred when trying to send the {0}. Status: {1}, Message: {2}"
+    received_message_from_self: "Received message sent from this server, ignore it."

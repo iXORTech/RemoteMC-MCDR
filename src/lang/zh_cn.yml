@@ -1,44 +1,44 @@
 remotemc_mcdr:
-  plugin_loaded: 'RemoteMC-MCDR 插件已加载完成'
-  version: '软件版本：{0}'
-  json_parsing_error: '§c自定义 JSON 解析错误'
-  logger.warning.experimental: '§c该程序仍然处于实验阶段，请不要应用于生产环境！'
-  logger.warning.release_candidate: '§c该程序仍然处于发布候选阶段，请不要应用于生产环境！'
-  loading_flask: '§9正在加载 Flask 框架...'
-  starting_flask: '§9正在于 {0}:{1} 启动 Flask 服务端...'
+  plugin_loaded: "RemoteMC-MCDR 插件已加载完成"
+  version: "软件版本：{0}"
+  json_parsing_error: "§c自定义 JSON 解析错误"
+  logger.warning.experimental: "§c该程序仍然处于实验阶段，请不要应用于生产环境！"
+  logger.warning.release_candidate: "§c该程序仍然处于发布候选阶段，请不要应用于生产环境！"
+  loading_flask: "§9正在加载 Flask 框架..."
+  starting_flask: "§9正在于 {0}:{1} 启动 Flask 服务端..."
   
-  enable_rcon: '命令已执行！启用 rcon 以获取服务器执行信息'
+  enable_rcon: "命令已执行！启用 rcon 以获取服务器执行信息"
 
-  message: '消息'
-  broadcast: '广播'
+  message: "消息"
+  broadcast: "广播"
 
   command:
-    permission_level: '命令 {0} 所需的权限等级为 {1}'
-    permission_denied: '你没有权限使用该命令。'
-    getting_literal_node: '获取字面量节点 {0} (!!{0} 命令)'
-    registered: '命令 !!{0} 已注册。'
+    permission_level: "命令 {0} 所需的权限等级为 {1}"
+    permission_denied: "你没有权限使用该命令。"
+    getting_literal_node: "获取字面量节点 {0} (!!{0} 命令)"
+    registered: "命令 !!{0} 已注册。"
 
   status:
-    server_running: '服务器运行中'
-    game_version: '游戏版本：'
-    player_online: '在线玩家：'
+    server_running: "服务器运行中"
+    game_version: "游戏版本："
+    player_online: "在线玩家："
   
   in_game:
-    click_to_use_command: '点击使用 §7{0}§r 命令'
+    click_to_use_command: "点击使用 §7{0}§r 命令"
     help_message:
-      line1: '-------------------- RemoteMC-MCDR v{0} --------------------'
-      line2: 'RemoteMC 系列 MCDReforged 插件'
-      line3: '§7!!remotemc §r显示此帮助信息'
-      line4: '§7!!msg §3<Message> §r向所有 Minecraft 服务器和聊天群发送消息'
-      line5: '§7!!broadcast §3<Message> §r向所有 Minecraft 服务器和聊天群广播'
+      line1: "-------------------- RemoteMC-MCDR v{0} --------------------"
+      line2: "RemoteMC 系列 MCDReforged 插件"
+      line3: "§7!!remotemc §r显示此帮助信息"
+      line4: "§7!!msg §3<Message> §r向所有 Minecraft 服务器和聊天群发送消息"
+      line5: "§7!!broadcast §3<Message> §r向所有 Minecraft 服务器和聊天群广播"
 
   message_and_broadcast:
-    sender_id_generated: 'Sender ID 已生成：{0}'
-    console: '控制台'
-    sending_message: '正在发送消息... sender_id: {0}, source: {1}, sender: {2}, message: {3}'
-    broadcasting: '正在广播... message: {0}'
-    core_url: 'RemoteMC-Core URL：{0}'
-    core_connection_error: '{0}发送失败！无法连接到 RemoteMC-Core！RemoteMC-Core 是否正在运行？连接错误：{1}'
-    sucessful_execution_response_received: '{0}已经成功发送。状态：{1}，消息：{2}'
-    unsucessful_execution_response_received: '{0}发送时遇到错误。状态：{1}，消息：{2}'
-    received_message_from_self: '接收到来自本服务器的消息，忽略。'
+    sender_id_generated: "Sender ID 已生成：{0}"
+    console: "控制台"
+    sending_message: "正在发送消息... sender_id: {0}, source: {1}, sender: {2}, message: {3}"
+    broadcasting: "正在广播... message: {0}"
+    core_url: "RemoteMC-Core URL：{0}"
+    core_connection_error: "{0}发送失败！无法连接到 RemoteMC-Core！RemoteMC-Core 是否正在运行？连接错误：{1}"
+    sucessful_execution_response_received: "{0}已经成功发送。状态：{1}，消息：{2}"
+    unsucessful_execution_response_received: "{0}发送时遇到错误。状态：{1}，消息：{2}"
+    received_message_from_self: "接收到来自本服务器的消息，忽略。"

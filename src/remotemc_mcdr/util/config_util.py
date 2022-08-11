@@ -14,10 +14,10 @@ def load_config(psi: PluginServerInterface, source=None):
 
     config = psi.load_config_simple(target_class=Configure, in_data_folder=True, echo_in_console=False)
 
-    with open(os.path.join(psi.get_data_folder(), 'config.json'), 'r', encoding='utf8') as f:
+    with open(os.path.join(psi.get_data_folder(), "config.json"), "r", encoding="utf8") as f:
         json_list = json.load(f)
     if source:
-        source.reply(i18n('plugin_loaded'))
+        source.reply(i18n("plugin_loaded"))
     update_json_cache(psi, json_list)
 
     return config

@@ -31,19 +31,19 @@ def parse_json(psi: PluginServerInterface, addr, path):
         req = requests.get(addr, timeout=5).text
     except requests.exceptions:
         print_exc()
-        return i18n('json_failed')
+        return i18n("json_failed")
     try:
         req_json = json.loads(req)
-        for i in path.strip().split('/'):
+        for i in path.strip().split("/"):
             req_json = req_json.get(i, dict())
         return req_json
     except ValueError:
-        psi.plugin_server_interface.logger.error(i18n('json_parsing_error'))
+        psi.plugin_server_interface.logger.error(i18n("json_parsing_error"))
         print_exc()
         return req
 
 
-@new_thread('RemoteMC-MCDR')
+@new_thread("RemoteMC-MCDR")
 def update_json_cache(psi: PluginServerInterface, json_list):
     global json_cache_lock, json_cache
     acquired = json_cache_lock.acquire(blocking=False)
@@ -51,6 +51,6 @@ def update_json_cache(psi: PluginServerInterface, json_list):
         return
     for i in json_list:
         _ = json_list[i]
-        json_cache[i] = RTextList(_['prefix'], ' ', parse_json(psi, _['addr'], _['path']))
+        json_cache[i] = RTextList(_["prefix"], " ", parse_json(psi, _["addr"], _["path"]))
     json_cache_lock.release()
     
