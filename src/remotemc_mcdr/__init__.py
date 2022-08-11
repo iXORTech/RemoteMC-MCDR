@@ -14,6 +14,7 @@ server: PluginServerInterface = None
 
 def register_commands(server: PluginServerInterface):
     def get_literal_node(literal):
+        server.logger.info(i18n('command.getting_literal_node', literal))
         lvl = config.permission.get(literal, 0)
         server.logger.info(i18n('command_permission_level', literal, lvl))
         return Literal(f'!!{literal}').requires(lambda src: src.has_permission(lvl),
@@ -21,16 +22,19 @@ def register_commands(server: PluginServerInterface):
     server.register_command(
         get_literal_node(CONTROL_COMMAND_PREFIX).runs(show_help)
     )
+    server.logger.info(i18n('command.registered', CONTROL_COMMAND_PREFIX))
     server.register_command(
         get_literal_node(MESSAGE_COMMAND_PREFIX).then(
             GreedyText('message').runs(send_message)
         )
     )
+    server.logger.info(i18n('command.registered', MESSAGE_COMMAND_PREFIX))
     server.register_command(
         get_literal_node(BROADCAST_COMMAND_PREFIX).then(
             GreedyText('message').runs(broadcast)
         )
     )
+    server.logger.info(i18n('command.registered', BROADCAST_COMMAND_PREFIX))
 
 
 # Load Intergrated Flask Web Server

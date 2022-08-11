@@ -15,6 +15,10 @@ remotemc_mcdr:
   command_permission_level: The permission level of command {0} is {1}
   command_perm_denied: You do not have permission to use this command.
 
+  command:
+    getting_literal_node: 'Getting literal node {0} (command !!{0})'
+    registered: 'Command !!{0} registered.'
+
   status:
     server_running: 'The Server is running'
     game_version: 'Game Version: '
