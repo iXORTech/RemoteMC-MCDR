@@ -22,3 +22,6 @@ with open(version_properties_file, "w") as f:
 
 os.chdir(f"{os.getcwd()}/src")
 os.system("python3 -m mcdreforged pack")
+
+if stage == "dev" or stage == "alpha" or stage == "beta" or stage == "rc":
+    os.rename(f"RemoteMC-MCDR-v{version}-{stage}.mcdr", f"RemoteMC-MCDR-v{version}-{stage}+{revision}.mcdr")
