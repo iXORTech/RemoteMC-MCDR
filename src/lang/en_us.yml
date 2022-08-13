@@ -48,6 +48,11 @@ remotemc_mcdr:
     permission_denied: "You do not have permission to use this command."
     getting_literal_node: "Getting literal node {0} (command !!{0})"
     registered: "Command !!{0} registered."
+    registering_help_message: "Registering help message \"{1}\" for command \"!!{0}\"..."
+    help_message:
+      remotemc: "Show help message for RemoteMC-MCDR Plugin"
+      msg: "Send message to all Minecraft servers and chat groups"
+      broadcast: "Broadcast to all Minecraft servers and chat groups"
 
   status:
     server_running: "The Server is running"
