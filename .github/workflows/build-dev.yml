@@ -28,7 +28,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r src/requirements.txt
       - name: Pack MCDR Plugin
-        run: ./pack.py
+        run: python pack.py
       - name: Get short SHA
         run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
       - name: Upload Artifacts
