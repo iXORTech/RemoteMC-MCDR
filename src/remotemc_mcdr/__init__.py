@@ -13,6 +13,14 @@ server: PluginServerInterface = None
 
 
 def register_commands(server: PluginServerInterface):
+    def register_help_message(command, *params):
+        command_string = f"!!{command}"
+        for param in params:
+            command_string += f" {param}"
+        help_message_string = f"{i18n(f'command.help_message.{command}')}"
+        server.logger.info(i18n("command.registering_help_message", command_string, help_message_string))
+        server.register_help_message(command_string, help_message_string)
+
     def get_literal_node(literal):
         server.logger.info(i18n("command.getting_literal_node", literal))
         lvl = config.permission.get(literal, 0)
@@ -23,18 +31,23 @@ def register_commands(server: PluginServerInterface):
     server.register_command(
         get_literal_node(CONTROL_COMMAND_PREFIX).runs(show_help)
     )
+    register_help_message(f"{CONTROL_COMMAND_PREFIX}")
     server.logger.info(i18n("command.registered", CONTROL_COMMAND_PREFIX))
+
     server.register_command(
         get_literal_node(MESSAGE_COMMAND_PREFIX).then(
             GreedyText("message").runs(send_message)
         )
     )
+    register_help_message(f"{MESSAGE_COMMAND_PREFIX}", "<Message>")
     server.logger.info(i18n("command.registered", MESSAGE_COMMAND_PREFIX))
+
     server.register_command(
         get_literal_node(BROADCAST_COMMAND_PREFIX).then(
             GreedyText("message").runs(broadcast)
         )
     )
+    register_help_message(f"{BROADCAST_COMMAND_PREFIX}", "<Message>")
     server.logger.info(i18n("command.registered", BROADCAST_COMMAND_PREFIX))
 
 

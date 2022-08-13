@@ -47,6 +47,11 @@ remotemc_mcdr:
     permission_denied: "你没有权限使用该命令。"
     getting_literal_node: "获取字面量节点 {0} (!!{0} 命令)"
     registered: "命令 !!{0} 已注册。"
+    registering_help_message: "正在为命令 \"!!{0}\" 注册帮助信息 \"{1}\"..."
+    help_message:
+      remotemc: "显示 RemoteMC-MCDR 插件的帮助信息"
+      msg: "向所有 Minecraft 服务器和聊天群发送消息"
+      broadcast: "向所有 Minecraft 服务器和聊天群广播"
 
   status:
     server_running: "服务器运行中"
