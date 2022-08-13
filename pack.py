@@ -20,8 +20,11 @@ with open(version_properties_file, "w") as f:
     f.write(version_properties_obj)
     f.close()
 
-os.chdir(f"{os.getcwd()}/src")
-os.system("python3 -m mcdreforged pack")
+project_dir = os.getcwd()
 
+os.chdir(f"{project_dir}/src")
+os.system("python3 -m mcdreforged pack -o ../build/distributions")
+
+os.chdir(f"{project_dir}/build/distributions")
 if stage == "dev" or stage == "alpha" or stage == "beta" or stage == "rc":
     os.rename(f"RemoteMC-MCDR-v{version}-{stage}.mcdr", f"RemoteMC-MCDR-v{version}-{stage}+{revision}.mcdr")
