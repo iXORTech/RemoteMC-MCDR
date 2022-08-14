@@ -6,6 +6,26 @@
   <b>[WIP] RemoteMC 系列 MCDReforged 插件</b>
 </p>
 
+RemoteMC-MCDR 是 RemoteMC 系列软件的一部分。要更详细的了解这些软件以及它们能做什么，请参考
+[这里](https://github.com/iXORTech/RemoteMC-Core/blob/main/README-zh.md)。
+
+## 🔉 声明
+
+由于 [Mirai 处出现的不和谐事件](https://github.com/mamoe/mirai/issues/850)，我们做出如下声明：
+
+- 本项目是出于开发者和贡献者们的爱好而开发的。因此，
+  1. 我们可能会仅仅因为我们有兴趣而增加，更改，甚至删除一些功能
+  2. 任何反对上述一点的攻击/冒犯性言论/内容/行为都会导致您被**永久封禁**
+- 本项目开源不代表开发者有义务为您提供服务。
+- 您的发言不应该具有攻击/冒犯性。
+- 在提问前请先阅读[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)。
+- 若有必要，开发者有权对您停止任何技术支持。
+- 若有必要，开发者有权基于任何理由将您封禁。
+- 我们将**尽可能**保证提前通知程序内部实现的程序内部的修改/删除，但无法做出任何保证。
+- 我们将**尽可能**使更新程序更容易（例如在仅仅替换可执行文件的情况下即可完成升级）或明确的通知需要进行的更改。但我们也不能对此做出保证。
+
+如果您对以上条目感到不适，您应该考虑停止使用本项目。
+
 ## 🎊 鸣谢
 
 > <span style="font-size: 0.96em">**PyCharm**</span><br/>面向专业开发者的 Python IDE
