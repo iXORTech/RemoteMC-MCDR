@@ -49,7 +49,7 @@ RemoteMC-MCDR 是 RemoteMC 系列软件的一部分。要更详细的了解这�
 
 
 - 当您在部署本项目时：
-  - 您应当保留在网页底部或者命令行提示处的 `由 iXOR Technology 强力驱动。` 字样，并且 `iXOR Technology` 应当始终链接到我们的网站（https://ixor.tech）
+  - 您应当保留在网页底部或者命令行提示处的 `由 iXOR Technology 强力驱动。` 字样，并且 `iXOR Technology` 应当始终链接到我们的网站（<https://ixor.tech>）
 
 
 - 对于 `RemoteMC-MCDR` 的衍生项目：
