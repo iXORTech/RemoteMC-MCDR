@@ -3,7 +3,7 @@
 <h1 align="center">RemoteMC-MCDR</h1>
 
 <p align="center"> 
-  <b>[WIP] MCDReforged Plugin of RemoteMC Series</b>
+  <b>MCDReforged Plugin of RemoteMC Series</b>
 </p>
 
 RemoteMC-MCDR is a component of RemoteMC Series. Learn more about this whole set of software and what it can do at

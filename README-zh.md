@@ -3,7 +3,7 @@
 <h1 align="center">RemoteMC-MCDR</h1>
 
 <p align="center"> 
-  <b>[WIP] RemoteMC 系列 MCDReforged 插件</b>
+  <b>RemoteMC 系列 MCDReforged 插件</b>
 </p>
 
 RemoteMC-MCDR 是 RemoteMC 系列软件的一部分。要更详细的了解这些软件以及它们能做什么，请参考
