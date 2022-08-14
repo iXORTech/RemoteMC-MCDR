@@ -1,8 +1,8 @@
 import os
 import json
 
-version = "0.0.1"
-stage = "dev"
+version = "0.1.0"
+stage = "beta"
 revision = "0000000"
 with os.popen("git rev-parse --short=7 HEAD") as f:
     revision = f.readline().strip()
