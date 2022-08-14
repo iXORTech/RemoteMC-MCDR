@@ -44,7 +44,7 @@ Template for changes, <mandatory> [optional]
 
 ## :warning: 破坏性变更 :warning:
 
-`暂时没有可以显示的内容
+`暂时没有可以显示的内容`
 
 ## 新增功能
 
@@ -56,7 +56,7 @@ Template for changes, <mandatory> [optional]
 
 ## 优化与改进
 
-`暂时没有可以显示的内容
+`暂时没有可以显示的内容`
 
 ## 错误修复
 
