@@ -3,7 +3,7 @@ __pycache__
 .vscode
 config
 dist
-build*
+build/
 *.zip
 
 # MCDR Packed Plugin
