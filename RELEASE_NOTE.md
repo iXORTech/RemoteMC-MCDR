@@ -60,5 +60,5 @@ Template for changes, <mandatory> [optional]
 
 ------
 
-**Full Changelog**: https://github.com/iXORTech/RemoteMC-Core/compare/v0.1.0-beta...v0.1.1-beta
-**完整的更新日志**: https://github.com/iXORTech/RemoteMC-Core/compare/v0.1.0-beta...v0.1.1-beta
+**Full Changelog**: https://github.com/iXORTech/RemoteMC-MCDR/compare/v0.1.0-beta...v0.1.1-beta
+**完整的更新日志**: https://github.com/iXORTech/RemoteMC-MCDR/compare/v0.1.0-beta...v0.1.1-beta

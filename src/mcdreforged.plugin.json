@@ -1,6 +1,6 @@
 {
     "id": "remotemc_mcdr",
-    "version": "0.1.1-beta",
+    "version": "0.2.0-dev",
     "name": "RemoteMC-MCDR",
     "description": {
         "en_us": "MCDReforged Plugin of RemoteMC Series",
