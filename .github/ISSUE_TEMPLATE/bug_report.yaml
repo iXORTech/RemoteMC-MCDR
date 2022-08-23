@@ -84,11 +84,13 @@ body:
           - **Operating System**: macOS Monterey 12.3
           - **Python Version** (can be get with `python --version` command): Python 3.10.5
           - **MCDReforged Version** (can be get with `pip show mcdreforged` command): 2.2.1
-          - **RemoteMC-MCDR Version (or Commit)**: 0.1.2 (or 5da64db)
+          - **RemoteMC-Core Version (or Commit)**: 0.2.1 Beta (or bd259a6)
+          - **RemoteMC-MCDR Version (or Commit)**: 0.1.0 Beta (or 20081cd)
       value: |
         - **Operating System**:
         - **Python Version**:
         - **MCDReforged Version**:
+        - **RemoteMC-Core Version (or Commit)**:
         - **RemoteMC-MCDR Version (or Commit)**:
       render: Markdown
 
