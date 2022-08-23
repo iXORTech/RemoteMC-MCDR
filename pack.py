@@ -2,7 +2,7 @@ import os
 import json
 
 version = "0.1.1"
-stage = "dev"
+stage = "beta"
 revision = "0000000"
 with os.popen("git rev-parse --short=7 HEAD") as f:
     revision = f.readline().strip()
