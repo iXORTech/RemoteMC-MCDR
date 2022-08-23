@@ -39,17 +39,17 @@ def send_message(source: CommandSource, context: dict):
         server.say(i18n("message_and_broadcast.core_connection_error", error))
         return
 
-    if remotemc_core_response.status_code == 200:
-        server.logger.info(i18n("message_and_broadcast.sucessful_execution_response_received",
-                                i18n("message"),
-                                remotemc_core_response.status_code,
-                                remotemc_core_response.text))
-    else:
-        server.logger.warning(i18n("message_and_broadcast.unsucessful_execution_response_received",
-                                   i18n("message"),
-                                   remotemc_core_response.status_code,
-                                   remotemc_core_response.text))
-        server.say(i18n("message_and_broadcast.unsucessful_execution_response_received",
-                        i18n("message"),
-                        remotemc_core_response.status_code,
-                        remotemc_core_response.text))
+    remotemc_core_response_list = remotemc_core_response.json()["responseList"]
+    server.logger.info(i18n("message_and_broadcast.core_response_list", remotemc_core_response_list))
+
+    for response in remotemc_core_response_list:
+        status_code = response["statusCode"]
+        message = response["message"]
+        if status_code == 200:
+            server.logger.info(i18n("message_and_broadcast.sucessful_execution_response_received",
+                                    i18n("message"), status_code, message))
+        else:
+            server.logger.warning(i18n("message_and_broadcast.unsucessful_execution_response_received",
+                                       i18n("message"), status_code, message))
+            server.say(i18n("message_and_broadcast.unsucessful_execution_response_received",
+                            i18n("message"), status_code, message))
