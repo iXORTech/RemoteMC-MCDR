@@ -41,8 +41,8 @@ RemoteMC-MCDR 是 RemoteMC 系列软件的一部分。要更详细的了解这�
 
 ## 📜 协议&许可证
 
-> **RemoteMC-MCDR 使用 [AGPL-3.0-or-later 协议](license-translations/LICENSE-zh)（[原文](LICENSE)）作为软件分发许可证。<br/>
-用户可以更改，再分发本开源代码，进行商业使用，但必须遵守 [AGPL-3.0-or-later 协议](license-translations/LICENSE-zh)（[原文](LICENSE)）内容**
+> **RemoteMC-MCDR 使用 [AGPL-3.0-or-later 协议](license-translations/LICENSE-zh.md)（[原文](LICENSE)）作为软件分发许可证。<br/>
+用户可以更改，再分发本开源代码，进行商业使用，但必须遵守 [AGPL-3.0-or-later 协议](license-translations/LICENSE-zh.md)（[原文](LICENSE)）内容**
 
 但同时，用户不得：
 - 将该项目用于违反**美国**，**加拿大**，**中华人民共和国**以及用户所处国家的法律的用途
@@ -53,7 +53,7 @@ RemoteMC-MCDR 是 RemoteMC 系列软件的一部分。要更详细的了解这�
 
 
 - 对于 `RemoteMC-MCDR` 的衍生项目：
-  - 不管您是在维护一个我们项目的分支抑或是直接使用了我们的代码，您的项目应当也使用 [AGPL-3.0-or-later 协议](license-translations/LICENSE-zh)（[原文](LICENSE)）作为软件分发许可证。
+  - 不管您是在维护一个我们项目的分支抑或是直接使用了我们的代码，您的项目应当也使用 [AGPL-3.0-or-later 协议](license-translations/LICENSE-zh.md)（[原文](LICENSE)）作为软件分发许可证。
   - 如果您在维护一个 `RemoteMC-MCDR` 的分支，您可以在网页底部或者命令行提示处使用 `由 iXOR Technology 强力驱动，由 [您的名字] 更改。` 字样。否则必须保留 `由 iXOR Technology 强力驱动。` 字样。
   - 如果你在使用 `RemoteMC` 已发布的代码，不管您是否更改了代码，您都需要在您的程序描述中**明确**提及使用了本项目代码，并附上本项目的链接。您不得扭曲或隐藏本项目免费且开源的事实。
     - 本项目链接
