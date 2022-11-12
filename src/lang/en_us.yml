@@ -74,7 +74,7 @@ remotemc_mcdr:
     sending_message: "Sending message... sender_id: {0}, source: {1}, sender: {2}, message: {3}"
     broadcasting: "Broadcasting... message: {0}"
     core_url: "RemoteMC-Core URL: {0}"
-    core_connection_error: "{0} send unsuccessfully! Cannot connect to RemoteMC-Core! Is RemoteMC-Core running? ConnectionError: {1}"
+    core_connection_error: "{0} send unsuccessfully! Cannot connect to RemoteMC-Core! Is RemoteMC-Core running? Is the address of RemoteMC-Core in config correct? ConnectionError: {1}"
     core_response_list: "Response List received from RemoteMC-Core:\n{0}"
     sucessful_execution_response_received: "{0} sent successfully. Status: {1}, Message: {2}"
     unsucessful_execution_response_received: "An error occurred when trying to send the {0}. Status: {1}, Message: {2}"
