@@ -12,12 +12,12 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Python 3.11
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -30,14 +30,14 @@ jobs:
       - name: Pack MCDR Plugin
         run: python pack.py
       - name: Get Tag
-        uses: mad9000/actions-find-and-replace-string@2
+        uses: mad9000/actions-find-and-replace-string@3
         id: gettag
         with:
           source: ${{ github.ref }}
           find: 'refs/tags/'
           replace: ''
       - name: Get Version Number
-        uses: mad9000/actions-find-and-replace-string@2
+        uses: mad9000/actions-find-and-replace-string@3
         id: getversion
         with:
           source: ${{ steps.gettag.outputs.value }}
@@ -47,11 +47,11 @@ jobs:
         run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
       - name: SHA to upper case
         id: sha
-        uses: ASzc/change-string-case-action@v2
+        uses: ASzc/change-string-case-action@v5
         with:
           string: ${{ env.SHORT_SHA }}
       - name: Release
-        uses: ncipollo/release-action@v1.10.0
+        uses: ncipollo/release-action@v1.11.2
         with:
           token: ${{ secrets.GH_TOKEN }}
           name: "Version ${{ steps.getversion.outputs.value }} (${{ steps.sha.outputs.uppercase }})"
