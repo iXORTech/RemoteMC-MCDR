@@ -28,7 +28,6 @@ def get_version() -> str:
     stage_property = get_version_property("stage")
     if stage_property == "stable":
         version_property = f"{version_property} ({revision_property})"
-        server.logger.info(i18n("version_util.got_version", version_property))
         return version_property
     stage_property = re.sub(r"dev", "DEV", stage_property)
     stage_property = re.sub(r"alpha\.", "Alpha ", stage_property)
@@ -38,5 +37,4 @@ def get_version() -> str:
     stage_property = re.sub(r"rc\.", "Release Candidate ", stage_property)
     stage_property = re.sub(r"rc", "Release Candidate", stage_property)
     version_property = f"{version_property} {stage_property} ({revision_property})"
-    server.logger.info(i18n("version_util.got_version", version_property))
     return version_property

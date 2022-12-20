@@ -41,7 +41,6 @@ remotemc_mcdr:
     file_loaded: "Version Properties File Loaded"
     getting_version_property: "Getting version property {0}... value: {1}"
     getting_version: "Getting version..."
-    got_version: "Got version: {0}"
 
   command:
     permission_level: "The permission level of command {0} is {1}"
