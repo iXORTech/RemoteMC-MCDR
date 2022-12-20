@@ -40,7 +40,6 @@ remotemc_mcdr:
     file_loaded: "版本属性文件已加载"
     getting_version_property: "正在获取版本属性 {0}... 属性值：{1}"
     getting_version: "正在获取版本..."
-    got_version: "获取版本成功：{0}"
 
   command:
     permission_level: "命令 {0} 所需的权限等级为 {1}"
