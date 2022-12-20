@@ -65,11 +65,11 @@ def on_load(plugin_server_interface: PluginServerInterface, prev):
     register_commands(server)
     server.logger.info("==========================================================")
     server.logger.info(i18n("plugin_loaded"))
-    server.logger.info(i18n("version", get_version()))
-    stage = get_version_property("stage")
-    if "dev" in stage or "alpha" in stage or "beta" in stage:
+    plugin_version = get_version()
+    server.logger.info(i18n("version", plugin_version))
+    if "DEV" in plugin_version or "Alpha" in plugin_version or "Beta" in plugin_version:
         server.logger.info(i18n("logger.warning.experimental"))
-    elif "rc" in stage:
+    elif "Release Candidate" in plugin_version:
         server.logger.info(i18n("logger.warning.release_candidate"))
     server.logger.info("==========================================================")
     server.logger.info(i18n("message_and_broadcast.sender_id_generated", generate_sender_id()))
