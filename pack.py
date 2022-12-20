@@ -28,3 +28,5 @@ os.system("python3.11 -m mcdreforged pack -o ../build/distributions")
 os.chdir(f"{project_dir}/build/distributions")
 if stage == "dev" or stage == "alpha" or stage == "beta" or stage == "rc":
     os.rename(f"RemoteMC-MCDR-v{version}-{stage}.mcdr", f"RemoteMC-MCDR-v{version}-{stage}+{revision}.mcdr")
+else:
+    os.rename(f"RemoteMC-MCDR-v{version}.mcdr", f"RemoteMC-MCDR-v{version}+{revision}.mcdr")
