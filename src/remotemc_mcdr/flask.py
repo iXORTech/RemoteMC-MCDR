@@ -22,8 +22,7 @@ auth_key: str = None
 @flask_app.route("/ping", methods=["GET"])
 def ping():
     server.logger.info(i18n("flask.received_get", "/ping"))
-    return get_200_response("PONG!")
-
+    return get_200_response({"message": "PONG!"})
 
 @flask_app.route("/api/v1/mcserver/status", methods=["GET"])
 def status():
