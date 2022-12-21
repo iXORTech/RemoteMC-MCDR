@@ -26,6 +26,7 @@ def ping():
     return get_200_response({"message": "PONG!", "version": get_version_property("version"),
                              "stage": get_version_property("stage"), "revision": get_version_property("revision")})
 
+
 @flask_app.route("/api/v1/mcserver/status", methods=["GET"])
 def status():
     server.logger.info(i18n("flask.received_get", "/api/v1/mcserver/status"))
