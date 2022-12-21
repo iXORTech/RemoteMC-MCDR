@@ -23,7 +23,7 @@ auth_key: str = None
 @flask_app.route("/ping", methods=["GET"])
 def ping():
     server.logger.info(i18n("flask.received_get", "/ping"))
-    return get_200_response({"message": "PONG!", "version": get_version_property("version"),
+    return get_200_response({"message": "PONG!", "module": "remotemc_mcdr", "version": get_version_property("version"),
                              "stage": get_version_property("stage"), "revision": get_version_property("revision")})
 
 
