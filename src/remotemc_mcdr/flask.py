@@ -5,6 +5,7 @@ from mcstatus import JavaServer
 from remotemc_mcdr.util.html_response_util import *
 from remotemc_mcdr.util.config_util import *
 from remotemc_mcdr.util.sender_id_util import is_the_same_sender_id
+from remotemc_mcdr.util.version_util import get_version_property
 
 server: PluginServerInterface = ServerInterface.get_instance().as_plugin_server_interface()
 
@@ -22,7 +23,8 @@ auth_key: str = None
 @flask_app.route("/ping", methods=["GET"])
 def ping():
     server.logger.info(i18n("flask.received_get", "/ping"))
-    return get_200_response({"message": "PONG!"})
+    return get_200_response({"message": "PONG!", "version": get_version_property("version"),
+                             "stage": get_version_property("stage"), "revision": get_version_property("revision")})
 
 @flask_app.route("/api/v1/mcserver/status", methods=["GET"])
 def status():
