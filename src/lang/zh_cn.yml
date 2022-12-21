@@ -33,8 +33,8 @@ remotemc_mcdr:
       message: "消息：{0}"
 
   sender_id:
-    generating: "正在生成发送者 ID ..."
-    generated: "发送者 ID 已生成：{0}"
+    generating: "正在生成 Sender ID ..."
+    generated: "Sender ID 已生成：{0}"
 
   version_util:
     file_loaded: "版本属性文件已加载"
@@ -67,7 +67,6 @@ remotemc_mcdr:
       line5: "§7!!broadcast §3<Message> §r向所有 Minecraft 服务器和聊天群广播"
 
   message_and_broadcast:
-    sender_id_generated: "Sender ID 已生成：{0}"
     console: "控制台"
     sending_message: "正在发送消息... sender_id: {0}, source: {1}, sender: {2}, message: {3}"
     broadcasting: "正在广播... message: {0}"

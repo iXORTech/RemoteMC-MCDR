@@ -68,7 +68,6 @@ remotemc_mcdr:
       line5: "§7!!broadcast §3<Message> §rBroadcast to all Minecraft servers and chat groups"
 
   message_and_broadcast:
-    sender_id_generated: "Sender ID generated: {0}"
     console: "Console"
     sending_message: "Sending message... sender_id: {0}, source: {1}, sender: {2}, message: {3}"
     broadcasting: "Broadcasting... message: {0}"

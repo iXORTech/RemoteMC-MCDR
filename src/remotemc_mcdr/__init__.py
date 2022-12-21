@@ -72,7 +72,7 @@ def on_load(plugin_server_interface: PluginServerInterface, prev):
     elif "Release Candidate" in plugin_version:
         server.logger.info(i18n("logger.warning.release_candidate"))
     server.logger.info("==========================================================")
-    server.logger.info(i18n("message_and_broadcast.sender_id_generated", generate_sender_id()))
+    generate_sender_id()
 
 
 def on_server_startup(plugin_server_interface: PluginServerInterface):
