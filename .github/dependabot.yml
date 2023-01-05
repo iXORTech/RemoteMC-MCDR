@@ -25,3 +25,27 @@ updates:
       - "type:dependencies"
       - "prio:high"
     open-pull-requests-limit: 25
+
+  # Maintain dependencies for pip
+  - package-ecosystem: "pip"
+    directory: "/src"
+    schedule:
+      interval: "daily"
+      # Check for pip updates at 00:00 UTC
+      time: "00:00"
+    # Add assignees
+    assignees:
+      - "Cubik65536"
+    # Add reviewers
+    reviewers:
+      - "Cubik65536"
+    # Include a list of updated dependencies
+    # with a prefix determined by the dependency group
+    commit-message:
+      prefix: "build(requirements)"
+      include: "scope"
+    # Specify labels for pip pull requests
+    labels:
+      - "type:dependencies"
+      - "prio:high"
+    open-pull-requests-limit: 25
