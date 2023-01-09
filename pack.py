@@ -23,7 +23,7 @@ with open(version_properties_file, "w") as f:
 project_dir = os.getcwd()
 
 os.chdir(f"{project_dir}/src")
-os.system("python3.11 -m mcdreforged pack -o ../build/distributions")
+os.system("python -m mcdreforged pack -o ../build/distributions")
 
 os.chdir(f"{project_dir}/build/distributions")
 if stage == "dev" or stage == "alpha" or stage == "beta" or stage == "rc":
