@@ -3,15 +3,23 @@ on: [pull_request, push]
 
 jobs:
   build:
-
-    runs-on: macos-latest
-
+    strategy:
+      matrix:
+        # Use these Python versions
+        python: [
+          3.11.1,     # Current latest Python
+        ]
+        # and run on Linux, macOS, and Windows
+        os: [ macos-latest, ubuntu-latest, windows-latest ]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python 3.11
+      - name: Set up Python ${{ matrix.python }}
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: ${{ matrix.python }}
+      - name: Show Python version
+        run: python --version
       - uses: actions/cache@v3
         with:
           path: ~/.cache/pip
@@ -27,6 +35,7 @@ jobs:
       - name: Get short SHA
         run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
       - name: Upload Artifacts
+        if: ${{ runner.os == 'macOS' }} # Only upload artifacts built on macOS
         uses: actions/upload-artifact@v3
         with:
           name: RemoteMC-MCDR-${{ env.SHORT_SHA }}
