@@ -62,7 +62,7 @@ RemoteMC-MCDR 是 RemoteMC 系列软件的一部分。要更详细的了解这�
 
 ``` text
 RemoteMC-MCDR - RemoteMC 系列 MCDReforged 插件
-Copyright (C) 2022 iXOR Technology, Cubik65536 以及 所有贡献者 版权所有。
+版权所有 (C) 2022-2023 iXOR Technology, Cubik65536 以及 所有贡献者。
 
 本程序是自由软件：你可以根据自由软件基金会发布的 GNU Affero 通用公共许可证的条款，
 即许可证的第3版或（您选择的）任何后来的版本重新发布它和/或修改它。
