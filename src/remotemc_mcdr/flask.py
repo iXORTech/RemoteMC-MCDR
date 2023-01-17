@@ -1,16 +1,18 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from waitress import serve
 from mcstatus import JavaServer
 
 from remotemc_mcdr.util.html_response_util import *
-from remotemc_mcdr.util.config_util import *
 from remotemc_mcdr.util.sender_id_util import is_the_same_sender_id
-from remotemc_mcdr.util.version_util import get_version_property
+
+from remotemc_mcdr.util.config_util import *
+from remotemc_mcdr.util.version_util import *
 
 server: PluginServerInterface = ServerInterface.get_instance().as_plugin_server_interface()
 
 # Flask Server App and its configuration
-flask_app = Flask(__name__)
+flask_app = Flask(__name__,
+                  template_folder= os.path.abspath(os.path.dirname(__file__)).join("templates"))
 flask_app.config["JSON_AS_ASCII"] = False
 flask_app.config["JSONIFY_MIMETYPE"] = "application/json; charset=utf-8"
 flask_app.config["DEBUG"] = True
@@ -18,6 +20,13 @@ flask_app.config["DEBUG"] = True
 config: Configure
 
 auth_key: str = None
+
+
+@flask_app.route("/")
+def index():
+    page = render_template('index.html',
+                           version_info=get_version())
+    return page
 
 
 @flask_app.route("/ping", methods=["GET"])
