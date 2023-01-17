@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_from_directory
 from jinja2 import Template
 from waitress import serve
 from mcstatus import JavaServer
@@ -8,13 +8,13 @@ from remotemc_mcdr.util.sender_id_util import is_the_same_sender_id
 
 from remotemc_mcdr.util.config_util import *
 from remotemc_mcdr.util.version_util import *
+from remotemc_mcdr.web.static.css.style import Style
 from remotemc_mcdr.web.index import IndexTemplate
 
 server: PluginServerInterface = ServerInterface.get_instance().as_plugin_server_interface()
 
 # Flask Server App and its configuration
-flask_app = Flask(__name__,
-                  template_folder= os.path.abspath(os.path.dirname(__file__)).join("web"))
+flask_app = Flask(__name__)
 flask_app.config["JSON_AS_ASCII"] = False
 flask_app.config["JSONIFY_MIMETYPE"] = "application/json; charset=utf-8"
 flask_app.config["DEBUG"] = True
@@ -27,6 +27,7 @@ auth_key: str = None
 @flask_app.route("/")
 def index():
     page = Template(IndexTemplate.content).render(
+        css=Style.content,
         version_info=get_version()
     )
     return page

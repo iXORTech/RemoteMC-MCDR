@@ -5,7 +5,9 @@ class IndexTemplate:
     <head>
         <title>Welcome to RemoteMC-MCDR!</title>
         <meta charset="utf-8">
-        <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+        <style>
+            {{ css }}
+        </style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <script src="https://unpkg.com/feather-icons"></script>
     </head>
