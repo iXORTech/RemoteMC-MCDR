@@ -1,4 +1,3 @@
-from flask import jsonify, Response
 from remotemc_mcdr.util.i18n_util import *
 
 server: PluginServerInterface = ServerInterface.get_instance().as_plugin_server_interface()
