@@ -6,8 +6,8 @@ from mcstatus import JavaServer
 from remotemc_mcdr.util.html_response_util import *
 from remotemc_mcdr.util.sender_id_util import is_the_same_sender_id
 
-from remotemc_mcdr.util.remotemc_core_check_util import *
 from remotemc_mcdr.util.config_util import *
+from remotemc_mcdr.util.remotemc_core_check_util import *
 from remotemc_mcdr.util.version_util import *
 from remotemc_mcdr.web.static.css.style import Style
 from remotemc_mcdr.web.index import IndexTemplate
