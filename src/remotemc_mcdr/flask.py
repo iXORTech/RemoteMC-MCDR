@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_from_directory
+from flask import Flask, request
 from jinja2 import Template
 from waitress import serve
 from mcstatus import JavaServer
@@ -6,10 +6,12 @@ from mcstatus import JavaServer
 from remotemc_mcdr.util.html_response_util import *
 from remotemc_mcdr.util.sender_id_util import is_the_same_sender_id
 
+from remotemc_mcdr.util.remotemc_core_check_util import *
 from remotemc_mcdr.util.config_util import *
 from remotemc_mcdr.util.version_util import *
 from remotemc_mcdr.web.static.css.style import Style
 from remotemc_mcdr.web.index import IndexTemplate
+from remotemc_mcdr.web.status import StatusTemplate
 
 server: PluginServerInterface = ServerInterface.get_instance().as_plugin_server_interface()
 
@@ -29,6 +31,34 @@ def index():
     page = Template(IndexTemplate.content).render(
         css=Style.content,
         version_info=get_version()
+    )
+    return page
+
+
+@flask_app.route("/status")
+def status():
+    remotemc_core_host = config.remotemc_core["host"]
+    remotemc_core_port = int(config.remotemc_core["port"])
+    remotemc_core_ssl = True if config.remotemc_core["ssl"].lower() == "true" else False
+    remotemc_core_check_status = remotemc_core_check(remotemc_core_host, remotemc_core_port, remotemc_core_ssl)
+
+    compatible_status = None
+    if remotemc_core_check_status == RemoteMCCoreStatus.IS_COMPATIBLE:
+        compatible_status = "Compatible"
+    elif remotemc_core_check_status == RemoteMCCoreStatus.INCOMPATIBLE:
+        compatible_status = "Incompatible"
+    elif remotemc_core_check_status == RemoteMCCoreStatus.UNKNOWN_ERROR:
+        compatible_status = "Unknown Error"
+    elif remotemc_core_check_status == RemoteMCCoreStatus.NOT_CONNECTED:
+        compatible_status = "Not Connected"
+
+    page = Template(StatusTemplate.content).render(
+        css=Style.content,
+        compatibility_color="green" if remotemc_core_check_status == RemoteMCCoreStatus.IS_COMPATIBLE else "red",
+        compatibility=compatible_status,
+        host=remotemc_core_host,
+        port=remotemc_core_port,
+        connection="Connected" if remotemc_core_check_status != RemoteMCCoreStatus.NOT_CONNECTED else "Disconnected"
     )
     return page
 
