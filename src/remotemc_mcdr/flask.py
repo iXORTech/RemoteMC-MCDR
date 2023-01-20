@@ -41,7 +41,7 @@ def ping():
 
 
 @flask_app.route("/api/v1/mcserver/status", methods=["GET"])
-def status():
+def mcserver_status():
     server.logger.info(i18n("flask.received_get", "/api/v1/mcserver/status"))
     minecraft_server_address = f"{config.minecraft_server['host']}:{config.minecraft_server['port']}"
     minecraft_server = JavaServer.lookup(minecraft_server_address)
@@ -61,7 +61,7 @@ def status():
 
 
 @flask_app.route("/api/v1/mcserver/execute_command", methods=["POST"])
-def execute_command():
+def mcserver_execute_command():
     server.logger.info(i18n("flask.received_post", "/api/v1/mcserver/execute_command"))
 
     if not request.is_json:
@@ -97,7 +97,7 @@ def execute_command():
 
 
 @flask_app.route("/api/v1/mcserver/send_message", methods=["POST"])
-def say():
+def mcserver_say():
     server.logger.info(i18n("flask.received_post", "/api/v1/mcserver/send_message"))
 
     if not request.is_json:
@@ -132,7 +132,7 @@ def say():
 
 
 @flask_app.route("/api/v1/mcserver/broadcast", methods=["POST"])
-def broadcast():
+def mcserver_broadcast():
     server.logger.info(i18n("flask.received_post", "/api/v1/mcserver/broadcast"))
 
     if not request.is_json:
