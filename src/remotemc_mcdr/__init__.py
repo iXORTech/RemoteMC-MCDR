@@ -74,6 +74,17 @@ def on_load(plugin_server_interface: PluginServerInterface, prev):
     server.logger.info("==========================================================")
     generate_sender_id()
 
+    remotemc_core_host = config.remotemc_core["host"]
+    remotemc_core_port = int(config.remotemc_core["port"])
+    remotemc_core_ssl = True if config.remotemc_core["ssl"].lower() == "true" else False
+    remotemc_core_check_status = remotemc_core_check(remotemc_core_host, remotemc_core_port, remotemc_core_ssl)
+    if remotemc_core_check_status == RemoteMCCoreStatus.INCOMPATIBLE:
+        server.logger.warning(i18n("logger.warning.core_incompatible"))
+    elif remotemc_core_check_status == RemoteMCCoreStatus.UNKNOWN_ERROR:
+        server.logger.error(i18n("logger.warning.core_unknown_error"))
+    elif remotemc_core_check_status == RemoteMCCoreStatus.NOT_CONNECTED:
+        server.logger.warning(i18n("logger.warning.core_not_connected"))
+
 
 def on_server_startup(plugin_server_interface: PluginServerInterface):
     load_flask()

@@ -4,6 +4,11 @@ remotemc_mcdr:
   json_parsing_error: "§cCustom JSON Parsing Error"
   logger.warning.experimental: "§cTHIS IS IN EXPERIMENTAL STAGE, DO NOT USE IN PRODUCTION ENVIRONMENT!"
   logger.warning.release_candidate: "§cTHIS IS A RELEASE CANDIDATE, DO NOT USE IN PRODUCTION ENVIRONMENT!"
+
+  logger.warning.core_incompatible: "§6Connected to an incompatible version of RemoteMC-Core! Please update RemoteMC-Core to the latest version."
+  logger.warning.core_unknown_error: "§cAn unknown error occurred when trying to connect to RemoteMC-Core!"
+  logger.warning.core_not_connected: "§6Cannot connect to RemoteMC-Core! Is RemoteMC-Core running? Is the address of RemoteMC-Core in config correct?"
+
   loading_flask: "§9Loading Flask framework..."
   starting_flask: "§9Starting Flask Server on {0}:{1}..."
 

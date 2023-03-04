@@ -6,6 +6,10 @@ remotemc_mcdr:
   logger.warning.release_candidate: "§c该程序仍然处于发布候选阶段，请不要应用于生产环境！"
   loading_flask: "§9正在加载 Flask 框架..."
   starting_flask: "§9正在于 {0}:{1} 启动 Flask 服务端..."
+
+  logger.warning.core_incompatible: "§6已连接到不兼容的 RemoteMC-Core！请更新 RemoteMC-Core 至最新版本。"
+  logger.warning.core_unknown_error: "§c在尝试连接 RemoteMC-Core 时发生未知错误！"
+  logger.warning.core_not_connected: "§6无法连接到 RemoteMC-Core！RemoteMC-Core 是否正在运行？配置文件中的 RemoteMC-Core 地址是否正确？"
   
   enable_rcon: "命令已执行！启用 rcon 以获取服务器执行信息"
 
