@@ -16,7 +16,7 @@ class IndexTemplate:
         <div class="index-container">
             <div class="content">
                 <h1>Welcome to RemoteMC-MCDR!</h1>
-                <hr>
+                {{ navbar }}
                 <p><b>Version </b>{{ version_info }}</p>
                 <hr>
                 <br>

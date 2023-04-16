@@ -16,6 +16,7 @@ class StatusTemplate:
         <div class="index-container">
             <div class="content">
                 <h2>Status - RemoteMC-MCDR</h2>
+                {{ navbar }}
                 <br>
                 <h2><b class="h1a">Connections:</b></h2>
                 <h3>RemoteMC-Core</h3>

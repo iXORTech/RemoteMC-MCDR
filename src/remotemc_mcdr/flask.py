@@ -10,6 +10,7 @@ from remotemc_mcdr.util.config_util import *
 from remotemc_mcdr.util.remotemc_core_check_util import *
 from remotemc_mcdr.util.version_util import *
 from remotemc_mcdr.web.static.css.style import Style
+from remotemc_mcdr.web.navbar import Navbar
 from remotemc_mcdr.web.index import IndexTemplate
 from remotemc_mcdr.web.status import StatusTemplate
 
@@ -30,6 +31,7 @@ auth_key: str = None
 def index():
     page = Template(IndexTemplate.content).render(
         css=Style.content,
+        navbar=Navbar.get(),
         version_info=get_version()
     )
     return page
@@ -54,6 +56,7 @@ def status():
 
     page = Template(StatusTemplate.content).render(
         css=Style.content,
+        navbar=Navbar.get(),
         compatibility_color="green" if remotemc_core_check_status == RemoteMCCoreStatus.IS_COMPATIBLE else "red",
         compatibility=compatible_status,
         host=remotemc_core_host,
