@@ -44,7 +44,7 @@ def send_message(source: CommandSource, context: dict):
 
     for response in remotemc_core_response_list:
         status_code = response["statusCode"]
-        message = response["message"]
+        message = response["body"]
         if status_code == 200:
             server.logger.info(i18n("message_and_broadcast.sucessful_execution_response_received",
                                     i18n("message"), status_code, message))
