@@ -10,6 +10,7 @@ from remotemc_mcdr.util.config_util import *
 from remotemc_mcdr.util.remotemc_core_check_util import *
 from remotemc_mcdr.util.version_util import *
 from remotemc_mcdr.web.static.css.style import Style
+from remotemc_mcdr.web.footer import Footer
 from remotemc_mcdr.web.navbar import Navbar
 from remotemc_mcdr.web.index import IndexTemplate
 from remotemc_mcdr.web.status import StatusTemplate
@@ -32,7 +33,8 @@ def index():
     page = Template(IndexTemplate.content).render(
         css=Style.content,
         navbar=Navbar.get(),
-        version_info=get_version()
+        version_info=get_version(),
+        footer=Footer.get()
     )
     return page
 
@@ -61,7 +63,8 @@ def status():
         compatibility=compatible_status,
         host=remotemc_core_host,
         port=remotemc_core_port,
-        connection="Connected" if remotemc_core_check_status != RemoteMCCoreStatus.NOT_CONNECTED else "Disconnected"
+        connection="Connected" if remotemc_core_check_status != RemoteMCCoreStatus.NOT_CONNECTED else "Disconnected",
+        footer=Footer.get()
     )
     return page
 
