@@ -55,6 +55,9 @@ remotemc_mcdr:
     registering_help_message: "Registering help message \"{1}\" for command \"!!{0}\"..."
     help_message:
       remotemc: "Show help message for RemoteMC-MCDR Plugin"
+      remotemc.help: "Show help message for RemoteMC-MCDR Plugin"
+      remotemc.status: "Show status of RemoteMC-MCDR Plugin"
+      remotemc.about: "Show about information of RemoteMC-MCDR Plugin"
       msg: "Send message to all Minecraft servers and chat groups"
       broadcast: "Broadcast to all Minecraft servers and chat groups"
 

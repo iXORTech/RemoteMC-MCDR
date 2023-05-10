@@ -47,6 +47,9 @@ def register_commands(server: PluginServerInterface):
     )
     register_help_message(f"{CONTROL_COMMAND_PREFIX}")
     server.logger.info(i18n("command.registered", CONTROL_COMMAND_PREFIX))
+    register_help_message(f"{CONTROL_COMMAND_PREFIX}.help")
+    register_help_message(f"{CONTROL_COMMAND_PREFIX}.status")
+    register_help_message(f"{CONTROL_COMMAND_PREFIX}.about")
 
     server.register_command(
         get_literal_node(f"!!{MESSAGE_COMMAND_PREFIX}").then(
