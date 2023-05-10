@@ -2,7 +2,7 @@ from remotemc_mcdr.flask import *
 from remotemc_mcdr.commands.broadcast_command import *
 from remotemc_mcdr.commands.help_command import *
 from remotemc_mcdr.commands.msg_command import *
-from remotemc_mcdr.commands.status_command import *
+from remotemc_mcdr.commands.remotemc_command import *
 from remotemc_mcdr.constants import *
 from remotemc_mcdr.util.i18n_util import *
 from remotemc_mcdr.util.config_util import *
