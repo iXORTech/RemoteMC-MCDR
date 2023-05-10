@@ -7,3 +7,7 @@ config: Configure = load_config(server)
 
 def status_command(source: CommandSource):
     source.reply("STATUS_COMMAND_REPLY")
+
+
+def about_command(source: CommandSource):
+    source.reply("ABOUT_COMMAND_REPLY")

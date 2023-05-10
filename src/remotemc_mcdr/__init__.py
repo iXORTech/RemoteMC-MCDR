@@ -39,6 +39,10 @@ def register_commands(server: PluginServerInterface):
         then(
             get_literal_node("status")
             .runs(status_command)
+        ).
+        then(
+            get_literal_node("about")
+            .runs(about_command)
         )
     )
     register_help_message(f"{CONTROL_COMMAND_PREFIX}")
