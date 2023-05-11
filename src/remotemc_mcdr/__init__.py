@@ -20,7 +20,7 @@ def register_commands(server: PluginServerInterface):
             command_string += f" {param}"
         help_message_string = f"{i18n(f'command.help_message.{command}')}"
         server.logger.info(i18n("command.registering_help_message", command_string, help_message_string))
-        server.register_help_message(command_string, help_message_string)
+        server.register_help_message(command_string.replace('.', ' '), help_message_string)
 
     def get_literal_node(literal):
         server.logger.info(i18n("command.getting_literal_node", literal))

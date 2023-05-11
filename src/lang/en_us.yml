@@ -72,8 +72,11 @@ remotemc_mcdr:
       line1: "-------------------- RemoteMC-MCDR v{0} --------------------"
       line2: "MCDReforged Plugin of RemoteMC Series"
       line3: "§7!!remotemc §rShow this help message"
-      line4: "§7!!msg §3<Message> §rSend message to all Minecraft servers and chat groups"
-      line5: "§7!!broadcast §3<Message> §rBroadcast to all Minecraft servers and chat groups"
+      line4: "§7!!remotemc help §rShow this help message"
+      line5: "§7!!remotemc status §rShow status of RemoteMC-MCDR Plugin"
+      line6: "§7!!remotemc about §rShow about information of RemoteMC-MCDR Plugin"
+      line7: "§7!!msg §3<Message> §rSend message to all Minecraft servers and chat groups"
+      line8: "§7!!broadcast §3<Message> §rBroadcast to all Minecraft servers and chat groups"
 
   message_and_broadcast:
     console: "Console"
