@@ -75,6 +75,12 @@ remotemc_mcdr:
       line6: "§7!!remotemc about §r显示 RemoteMC-MCDR 插件的关于信息"
       line7: "§7!!msg §3<Message> §r向所有 Minecraft 服务器和聊天群发送消息"
       line8: "§7!!broadcast §3<Message> §r向所有 Minecraft 服务器和聊天群广播"
+    status_message:
+      line1: "------------------ 状态 - RemoteMC-MCDR ------------------"
+      line2: "§l连接"
+      line3:
+        compatible: "[{0}] §o§a兼容 §r{1} : {2} - §l{3}"
+        incompatible: "[{0}] §o§c不兼容 §r{1} : {2} - §l{3}"
 
   message_and_broadcast:
     console: "控制台"
