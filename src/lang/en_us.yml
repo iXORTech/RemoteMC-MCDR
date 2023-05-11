@@ -55,6 +55,9 @@ remotemc_mcdr:
     registering_help_message: "Registering help message \"{1}\" for command \"!!{0}\"..."
     help_message:
       remotemc: "Show help message for RemoteMC-MCDR Plugin"
+      remotemc.help: "Show help message for RemoteMC-MCDR Plugin"
+      remotemc.status: "Show status of RemoteMC-MCDR Plugin"
+      remotemc.about: "Show about information of RemoteMC-MCDR Plugin"
       msg: "Send message to all Minecraft servers and chat groups"
       broadcast: "Broadcast to all Minecraft servers and chat groups"
 
@@ -69,8 +72,17 @@ remotemc_mcdr:
       line1: "-------------------- RemoteMC-MCDR v{0} --------------------"
       line2: "MCDReforged Plugin of RemoteMC Series"
       line3: "§7!!remotemc §rShow this help message"
-      line4: "§7!!msg §3<Message> §rSend message to all Minecraft servers and chat groups"
-      line5: "§7!!broadcast §3<Message> §rBroadcast to all Minecraft servers and chat groups"
+      line4: "§7!!remotemc help §rShow this help message"
+      line5: "§7!!remotemc status §rShow status of RemoteMC-MCDR Plugin"
+      line6: "§7!!remotemc about §rShow about information of RemoteMC-MCDR Plugin"
+      line7: "§7!!msg §3<Message> §rSend message to all Minecraft servers and chat groups"
+      line8: "§7!!broadcast §3<Message> §rBroadcast to all Minecraft servers and chat groups"
+    status_message:
+      line1: "------------------ Status - RemoteMC-MCDR ------------------"
+      line2: "§lConnections"
+      line3:
+        compatible: "[{0}] §o§aCompatible §r{1} : {2} - §l{3}"
+        incompatible: "[{0}] §o§cIncompatible §r{1} : {2} - §l{3}"
 
   message_and_broadcast:
     console: "Console"

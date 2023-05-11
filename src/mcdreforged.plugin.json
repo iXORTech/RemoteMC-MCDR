@@ -13,7 +13,7 @@
 	],
     "link": "https://github.com/iXORTech/RemoteMC-MCDR",
     "dependencies": {
-        "mcdreforged": "^2.7.0"
+        "mcdreforged": "~2.8.0"
     },
     "resources": [
 		"lang"

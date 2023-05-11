@@ -1,7 +1,8 @@
 from remotemc_mcdr.flask import *
+from remotemc_mcdr.commands.broadcast_command import *
 from remotemc_mcdr.commands.help_command import *
 from remotemc_mcdr.commands.msg_command import *
-from remotemc_mcdr.commands.broadcast_command import *
+from remotemc_mcdr.commands.remotemc_command import *
 from remotemc_mcdr.constants import *
 from remotemc_mcdr.util.i18n_util import *
 from remotemc_mcdr.util.config_util import *
@@ -19,23 +20,39 @@ def register_commands(server: PluginServerInterface):
             command_string += f" {param}"
         help_message_string = f"{i18n(f'command.help_message.{command}')}"
         server.logger.info(i18n("command.registering_help_message", command_string, help_message_string))
-        server.register_help_message(command_string, help_message_string)
+        server.register_help_message(command_string.replace('.', ' '), help_message_string)
 
     def get_literal_node(literal):
         server.logger.info(i18n("command.getting_literal_node", literal))
         lvl = config.permission.get(literal, 0)
         server.logger.info(i18n("command.permission_level", literal, lvl))
-        return Literal(f"!!{literal}").requires(lambda src: src.has_permission(lvl),
-                                                lambda: i18n("command.permission_denied"))
+        return Literal(literal).requires(lambda src: src.has_permission(lvl))\
+            .on_error(RequirementNotMet, lambda src: src.reply(i18n('command.permission_denied')), handled=True)
 
     server.register_command(
-        get_literal_node(CONTROL_COMMAND_PREFIX).runs(show_help)
+        Literal(f"!!{CONTROL_COMMAND_PREFIX}").
+        runs(show_help).
+        then(
+            get_literal_node("help")
+            .runs(show_help)
+        ).
+        then(
+            get_literal_node("status")
+            .runs(status_command)
+        ).
+        then(
+            get_literal_node("about")
+            .runs(about_command)
+        )
     )
     register_help_message(f"{CONTROL_COMMAND_PREFIX}")
     server.logger.info(i18n("command.registered", CONTROL_COMMAND_PREFIX))
+    register_help_message(f"{CONTROL_COMMAND_PREFIX}.help")
+    register_help_message(f"{CONTROL_COMMAND_PREFIX}.status")
+    register_help_message(f"{CONTROL_COMMAND_PREFIX}.about")
 
     server.register_command(
-        get_literal_node(MESSAGE_COMMAND_PREFIX).then(
+        get_literal_node(f"!!{MESSAGE_COMMAND_PREFIX}").then(
             GreedyText("message").runs(send_message)
         )
     )
@@ -43,7 +60,7 @@ def register_commands(server: PluginServerInterface):
     server.logger.info(i18n("command.registered", MESSAGE_COMMAND_PREFIX))
 
     server.register_command(
-        get_literal_node(BROADCAST_COMMAND_PREFIX).then(
+        get_literal_node(f"!!{BROADCAST_COMMAND_PREFIX}").then(
             GreedyText("message").runs(broadcast)
         )
     )

@@ -8,7 +8,10 @@ def show_help(source: CommandSource):
                       i18n("in_game.help_message.line2") + "\n",
                       i18n("in_game.help_message.line3") + "\n",
                       i18n("in_game.help_message.line4") + "\n",
-                      i18n("in_game.help_message.line5") + "\n"]
+                      i18n("in_game.help_message.line5") + "\n",
+                      i18n("in_game.help_message.line6") + "\n",
+                      i18n("in_game.help_message.line7") + "\n",
+                      i18n("in_game.help_message.line8") + "\n"]
     help_msg_rtext = RTextList()
     for line in help_msg_lines:
         result = re.search(r"(?<=§7)!![\w ]*(?=§)", line)
