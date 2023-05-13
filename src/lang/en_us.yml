@@ -83,6 +83,7 @@ remotemc_mcdr:
       line3:
         compatible: "[{0}] §o§aCompatible §r{1} : {2} - §l{3}"
         incompatible: "[{0}] §o§cIncompatible §r{1} : {2} - §l{3}"
+        disconnected: "[{0}] {1} : {2} - §l{3}"
 
   message_and_broadcast:
     console: "Console"

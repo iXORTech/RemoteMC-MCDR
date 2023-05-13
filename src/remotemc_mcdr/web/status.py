@@ -21,7 +21,9 @@ class StatusTemplate:
                 <h2><b class="h1a">Connections:</b></h2>
                 <h3>RemoteMC-Core</h3>
                 <p>
-                    <i style="color: {{ compatibility_color }};">[{{ compatibility }}] </i>
+                    {% if connection == "Connected" %}
+                        <i style="color: {{ compatibility_color }};">[{{ compatibility }}] </i>
+                    {% endif %}
                     {{ host }} : {{ port }} - <b>{{ connection }}</b>
                 </p>
                 <br>

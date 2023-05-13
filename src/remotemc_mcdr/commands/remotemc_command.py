@@ -27,12 +27,17 @@ def status_command(source: CommandSource):
     status_msg_lines = ["\n",
                         i18n("in_game.status_message.line1") + "\n",
                         i18n("in_game.status_message.line2") + "\n",
-                        (i18n("in_game.status_message.line3.compatible",
-                              "RemoteMC-Core", remotemc_core_host, remotemc_core_port, connection)
-                         if
-                         remotemc_core_check_status == RemoteMCCoreStatus.IS_COMPATIBLE
-                         else i18n("in_game.status_message.line3.incompatible",
-                                   "RemoteMC-Core", remotemc_core_host, remotemc_core_port, connection)
+                        (
+                            i18n("in_game.status_message.line3.disconnected",
+                                 "RemoteMC-Core", remotemc_core_host, remotemc_core_port, connection)
+                            if remotemc_core_check_status == RemoteMCCoreStatus.NOT_CONNECTED
+                            else
+                            i18n("in_game.status_message.line3.compatible",
+                                 "RemoteMC-Core", remotemc_core_host, remotemc_core_port, connection)
+                            if
+                            remotemc_core_check_status == RemoteMCCoreStatus.IS_COMPATIBLE
+                            else i18n("in_game.status_message.line3.incompatible",
+                                      "RemoteMC-Core", remotemc_core_host, remotemc_core_port, connection)
                         ) + "\n"
                         ]
 

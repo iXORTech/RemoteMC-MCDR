@@ -81,6 +81,7 @@ remotemc_mcdr:
       line3:
         compatible: "[{0}] §o§a兼容 §r{1} : {2} - §l{3}"
         incompatible: "[{0}] §o§c不兼容 §r{1} : {2} - §l{3}"
+        disconnected: "[{0}] {1} : {2} - §l{3}"
 
   message_and_broadcast:
     console: "控制台"
