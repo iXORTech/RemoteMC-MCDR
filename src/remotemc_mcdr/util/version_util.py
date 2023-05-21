@@ -38,3 +38,7 @@ def get_version() -> str:
     stage_property = re.sub(r"rc", "Release Candidate", stage_property)
     version_property = f"{version_property} {stage_property} ({revision_property})"
     return version_property
+
+
+def get_build_date() -> str:
+    return get_version_property("build_date")

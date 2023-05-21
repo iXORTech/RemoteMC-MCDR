@@ -1,5 +1,6 @@
 import os
 import json
+from datetime import datetime
 
 version = "0.2.0"
 stage = "dev"
@@ -7,10 +8,13 @@ revision = "0000000"
 with os.popen("git rev-parse --short=7 HEAD") as f:
     revision = f.readline().strip()
 
+build_date = datetime.today().strftime("%a., %B %d %Y")
+
 version_properties = {
     "version": version,
     "stage": stage,
-    "revision": revision
+    "revision": revision,
+    "build_date": build_date
 }
 
 version_properties_obj = json.dumps(version_properties)
