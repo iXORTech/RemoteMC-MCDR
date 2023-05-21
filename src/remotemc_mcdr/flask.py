@@ -14,6 +14,7 @@ from remotemc_mcdr.web.footer import Footer
 from remotemc_mcdr.web.navbar import Navbar
 from remotemc_mcdr.web.index import IndexTemplate
 from remotemc_mcdr.web.status import StatusTemplate
+from remotemc_mcdr.web.about import AboutTemplate
 
 server: PluginServerInterface = ServerInterface.get_instance().as_plugin_server_interface()
 
@@ -66,6 +67,19 @@ def status():
         connection="Connected" if remotemc_core_check_status != RemoteMCCoreStatus.NOT_CONNECTED else "Disconnected",
         footer=Footer.get()
     )
+    return page
+
+
+@flask_app.route("/about")
+def about():
+    page = Template(AboutTemplate.content).render(
+        css=Style.content,
+        navbar=Navbar.get(),
+        version_info=get_version(),
+        build_date = get_build_date(),
+        footer=Footer.get()
+    )
+
     return page
 
 
