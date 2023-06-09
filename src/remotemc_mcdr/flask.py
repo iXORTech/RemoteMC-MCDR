@@ -4,6 +4,7 @@ from waitress import serve
 from mcstatus import JavaServer
 
 from remotemc_mcdr.util.html_response_util import *
+from remotemc_mcdr.util.remotemc_core_check_util import get_compatible_status
 from remotemc_mcdr.util.sender_id_util import is_the_same_sender_id
 
 from remotemc_mcdr.util.config_util import *
@@ -62,7 +63,7 @@ def about():
         css=Style.content,
         navbar=Navbar.get(),
         version_info=get_version(),
-        build_date = get_build_date(),
+        build_date=get_build_date(),
         footer=Footer.get()
     )
 

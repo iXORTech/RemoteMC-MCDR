@@ -1,4 +1,5 @@
 from remotemc_mcdr.util.config_util import *
+from remotemc_mcdr.util.version_util import *
 from remotemc_mcdr.util.remotemc_core_check_util import *
 from remotemc_mcdr.util.reply_util import reply_to_source
 
@@ -34,4 +35,10 @@ def status_command(source: CommandSource):
 
 
 def about_command(source: CommandSource):
-    source.reply("ABOUT_COMMAND_REPLY")
+    about_msg_lines = ["\n",
+                       i18n("in_game.about_message.line1") + "\n",
+                       i18n("in_game.about_message.line2") + "\n",
+                       i18n("in_game.about_message.line3", get_version(), get_build_date()) + "\n",
+                       i18n("in_game.about_message.line4") + "\n"
+                       ]
+    reply_to_source(source, about_msg_lines)

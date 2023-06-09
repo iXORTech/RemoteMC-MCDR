@@ -82,6 +82,11 @@ remotemc_mcdr:
         compatible: "[{0}] §o§a兼容 §r{1} : {2} - §l{3}"
         incompatible: "[{0}] §o§c不兼容 §r{1} : {2} - §l{3}"
         disconnected: "[{0}] {1} : {2} - §l{3}"
+    about_message:
+      line1: "------------------ 关于 - RemoteMC-MCDR ------------------"
+      line2: "§lRemoteMC-MCDR"
+      line3: "版本: {0} - 构建于 {1}"
+      line4: "开源许可: GNU Affero General Public License v3.0"
 
   message_and_broadcast:
     console: "控制台"

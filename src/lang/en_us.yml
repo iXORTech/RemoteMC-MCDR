@@ -84,6 +84,11 @@ remotemc_mcdr:
         compatible: "[{0}] §o§aCompatible §r{1} : {2} - §l{3}"
         incompatible: "[{0}] §o§cIncompatible §r{1} : {2} - §l{3}"
         disconnected: "[{0}] {1} : {2} - §l{3}"
+    about_message:
+      line1: "------------------ About - RemoteMC-MCDR -------------------"
+      line2: "§lRemoteMC-MCDR"
+      line3: "Version: {0} - Built on {1}"
+      line4: "Licensed under: GNU Affero General Public License v3.0"
 
   message_and_broadcast:
     console: "Console"
